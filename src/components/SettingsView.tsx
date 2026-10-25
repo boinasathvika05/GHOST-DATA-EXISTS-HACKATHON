@@ -4,6 +4,7 @@ import {
   RefreshCw, Download, FileText, Cpu, Lock
 } from 'lucide-react';
 import { DELETION_RULES } from '../audit_engine/policy_rules';
+import { downloadOutputCsv } from '../utils/download';
 
 export const SettingsView: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'rules' | 'config' | 'platform'>('rules');
@@ -26,9 +27,13 @@ export const SettingsView: React.FC = () => {
         </div>
         <div className="flex items-center gap-2">
           <a
-            href="/api/download/output"
-            download
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#101521] border border-gray-800 text-xs text-gray-300 hover:text-white hover:border-gray-700 transition"
+            href="/output.csv"
+            download="output.csv"
+            onClick={(e) => {
+              e.preventDefault();
+              downloadOutputCsv('/output.csv', 'output.csv');
+            }}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#101521] border border-gray-800 text-xs text-gray-300 hover:text-white hover:border-gray-700 transition cursor-pointer"
           >
             <Download className="w-3.5 h-3.5" />
             Export output.csv

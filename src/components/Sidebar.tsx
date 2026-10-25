@@ -15,6 +15,7 @@ import {
   Download,
   FolderArchive
 } from 'lucide-react';
+import { downloadOutputCsv } from '../utils/download';
 
 interface SidebarProps {
   currentTab: string;
@@ -134,9 +135,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </p>
             <div className="grid grid-cols-2 gap-1.5">
               <a
-                href="/api/download/output.csv"
+                href="/output.csv"
                 download="output.csv"
-                className="flex items-center justify-center gap-1 py-1 px-2 rounded bg-[#151C2A] hover:bg-[#1C2436] text-[10px] text-white border border-[#2A344A] transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadOutputCsv('/output.csv', 'output.csv');
+                }}
+                className="flex items-center justify-center gap-1 py-1 px-2 rounded bg-[#151C2A] hover:bg-[#1C2436] text-[10px] text-white border border-[#2A344A] transition-colors cursor-pointer"
               >
                 <Download className="w-3 h-3 text-[#8B7CFF]" />
                 output.csv

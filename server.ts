@@ -501,26 +501,31 @@ app.get('/api/dataset/preview/:fileName', (req: Request, res: Response) => {
   }
 });
 
-// 12. File Downloads (Priority 1: Downloads latest successful run artifact)
-app.get(['/api/download/output', '/api/download/output.csv'], (req: Request, res: Response) => {
-  const artifact = runManager.getArtifactContent();
-  if (!artifact) {
-    // If no run recorded, attempt to generate once
+// 12. File Downloads (Priority 1: Serves official output.csv as text/csv attachment)
+app.get(
+  ['/output.csv', '/output.csv.html', '/download/output.csv', '/api/download/output', '/api/download/output.csv'],
+  (req: Request, res: Response) => {
+    // 1. Check for real output.csv on disk in repoRoot
     const rootPath = path.join(repoRoot, 'output.csv');
     if (fs.existsSync(rootPath)) {
       res.setHeader('Content-Disposition', 'attachment; filename="output.csv"');
-      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Type', 'text/csv; charset=utf-8');
       return res.sendFile(rootPath);
     }
-    return res.status(404).json({ error: 'No output artifact available. Please execute an audit run first.' });
-  }
 
-  res.setHeader('Content-Disposition', 'attachment; filename="output.csv"');
-  res.setHeader('Content-Type', 'text/csv');
-  res.setHeader('X-Run-ID', artifact.run.run_id);
-  res.setHeader('X-Completed-At', artifact.run.completed_at || '');
-  res.send(artifact.content);
-});
+    // 2. Fallback to latest verified run artifact
+    const artifact = runManager.getArtifactContent();
+    if (artifact && artifact.content) {
+      res.setHeader('Content-Disposition', 'attachment; filename="output.csv"');
+      res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+      res.setHeader('X-Run-ID', artifact.run.run_id);
+      res.setHeader('X-Completed-At', artifact.run.completed_at || '');
+      return res.send(artifact.content);
+    }
+
+    return res.status(404).type('text/plain').send('output.csv not found. Run python3 code/main.py or execute an audit first.');
+  }
+);
 
 app.get('/api/download/artifacts/:runId', (req: Request, res: Response) => {
   const runId = req.params.runId;

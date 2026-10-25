@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Download, RefreshCw, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { downloadOutputCsv } from '../utils/download';
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -107,9 +108,13 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Quick Download Menu (Points directly to latest run artifact) */}
         <a
-          href="/api/download/output.csv"
+          href="/output.csv"
           download="output.csv"
-          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#151C2A] hover:bg-[#1C2436] text-xs text-white border border-[#2A344A] transition-colors"
+          onClick={(e) => {
+            e.preventDefault();
+            downloadOutputCsv('/output.csv', 'output.csv');
+          }}
+          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#151C2A] hover:bg-[#1C2436] text-xs text-white border border-[#2A344A] transition-colors cursor-pointer"
           title="Download latest verified output.csv"
         >
           <Download className="w-3.5 h-3.5 text-[#59D9FF]" />

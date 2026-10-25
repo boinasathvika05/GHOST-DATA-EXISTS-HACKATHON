@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { OverviewMetrics } from '../types';
+import { downloadOutputCsv } from '../utils/download';
 
 interface OverviewDashboardProps {
   metrics: OverviewMetrics;
@@ -274,8 +275,12 @@ export const OverviewDashboard: React.FC<OverviewDashboardProps> = ({
 
           <div className="flex items-center gap-2 shrink-0">
             <a
-              href="/api/download/output.csv"
+              href="/output.csv"
               download="output.csv"
+              onClick={(e) => {
+                e.preventDefault();
+                downloadOutputCsv('/output.csv', 'output.csv');
+              }}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#8B7CFF] hover:bg-[#7866FF] text-white text-xs font-medium shadow-md shadow-[#8B7CFF]/20 transition-all cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
