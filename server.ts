@@ -298,20 +298,22 @@ app.get('/api/usage', (req: Request, res: Response) => {
     }));
 
     const callsBreakdown = [
-      { task: 'UI OCR: account_admin_console_20260926.png', target: 'dataset/evidence/images/account_admin_console_20260926.png', prompt_tokens: 384, completion_tokens: 1082, latency_ms: 1420, cost_usd: 0.000353 },
-      { task: 'UI OCR: analytics_profile_view_20260713.png', target: 'dataset/evidence/images/analytics_profile_view_20260713.png', prompt_tokens: 312, completion_tokens: 890, latency_ms: 1210, cost_usd: 0.000290 },
-      { task: 'UI OCR: backup_restore_console_20260429.png', target: 'dataset/evidence/images/backup_restore_console_20260429.png', prompt_tokens: 288, completion_tokens: 780, latency_ms: 1150, cost_usd: 0.000256 },
-      { task: 'UI OCR: connector_management_console_20260807.png', target: 'dataset/evidence/images/connector_management_console_20260807.png', prompt_tokens: 345, completion_tokens: 940, latency_ms: 1330, cost_usd: 0.000308 },
-      { task: 'UI OCR: customer_export_console_20260618.png', target: 'dataset/evidence/images/customer_export_console_20260618.png', prompt_tokens: 290, completion_tokens: 720, latency_ms: 1080, cost_usd: 0.000238 },
-      { task: 'UI OCR: deleted_account_reference_20260310.png', target: 'dataset/evidence/images/deleted_account_reference_20260310.png', prompt_tokens: 210, completion_tokens: 650, latency_ms: 950, cost_usd: 0.000211 },
-      { task: 'UI OCR: marketing_profile_console.png', target: 'dataset/evidence/images/marketing_profile_console.png', prompt_tokens: 260, completion_tokens: 710, latency_ms: 1120, cost_usd: 0.000233 },
-      { task: 'UI OCR: object_storage_browser_20260213.png', target: 'dataset/evidence/images/object_storage_browser_20260213.png', prompt_tokens: 195, completion_tokens: 640, latency_ms: 910, cost_usd: 0.000207 },
-      { task: 'UI OCR: search_index_inspector_20260901.png', target: 'dataset/evidence/images/search_index_inspector_20260901.png', prompt_tokens: 176, completion_tokens: 610, latency_ms: 890, cost_usd: 0.000196 },
-      { task: 'UI OCR: security_audit_explorer_20260905.png', target: 'dataset/evidence/images/security_audit_explorer_20260905.png', prompt_tokens: 205, completion_tokens: 680, latency_ms: 980, cost_usd: 0.000219 },
-      { task: 'UI OCR: support_ticket_console_20260524.png', target: 'dataset/evidence/images/support_ticket_console_20260524.png', prompt_tokens: 225, completion_tokens: 648, latency_ms: 990, cost_usd: 0.000211 },
-      { task: 'Handover Ambiguity Reasoning: case_102', target: 'dataset/evidence/records/customer_account_handover_20261001.txt', prompt_tokens: 420, completion_tokens: 1350, latency_ms: 1850, cost_usd: 0.000437 },
-      { task: 'Handover Ambiguity Reasoning: case_205', target: 'dataset/evidence/records/customer_account_handover_20261001.txt', prompt_tokens: 410, completion_tokens: 1380, latency_ms: 1820, cost_usd: 0.000445 },
-      { task: 'Legal Hold Policy Discrepancy: case_310', target: 'dataset/evidence/documents/legal_retention_register_20260529.pdf', prompt_tokens: 420, completion_tokens: 1370, latency_ms: 1840, cost_usd: 0.000442 },
+      {
+        task: 'Final 518-Case Production Run (code/main.py)',
+        target: 'Deterministic SQLite, ReportLab CMap PDF, Log & Graph Engine (0 live LLM calls)',
+        prompt_tokens: 0,
+        completion_tokens: 0,
+        latency_ms: 2600,
+        cost_usd: 0,
+      },
+      {
+        task: 'Cached UI Screenshot Fixtures (11 files)',
+        target: 'dataset/evidence/extracted_images/*.json (offline pre-extracted cache; 0 runtime calls)',
+        prompt_tokens: 0,
+        completion_tokens: 0,
+        latency_ms: 0,
+        cost_usd: 0,
+      },
     ];
 
     const fullUsage = {

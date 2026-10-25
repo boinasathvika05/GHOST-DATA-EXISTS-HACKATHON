@@ -324,7 +324,7 @@ export function validateOutputContent(
     });
   }
 
-  // Rule 11: COMPLETE Cases Verification-Only Boundary
+  // Rule 11: COMPLETE Cases Verification-Only & Non-Empty Boundary
   {
     const completeErrors: string[] = [];
     for (const r of rows) {
@@ -332,9 +332,15 @@ export function validateOutputContent(
         try {
           const steps = JSON.parse(r.steps_json);
           if (Array.isArray(steps)) {
+            if (steps.length === 0) {
+              completeErrors.push(`${r.case_id}: COMPLETE case has empty steps_json array`);
+            }
             for (const s of steps) {
               if (s.phase !== 'VERIFICATION') {
                 completeErrors.push(`${r.case_id}: COMPLETE case has non-VERIFICATION step (${s.phase})`);
+              }
+              if (!s.evidence_id) {
+                completeErrors.push(`${r.case_id}: COMPLETE verification step missing evidence_id`);
               }
             }
           }
@@ -348,8 +354,8 @@ export function validateOutputContent(
       rule_no: 11,
       rule_name: 'COMPLETE Cases Verification-Only Boundary',
       passed,
-      expected: 'COMPLETE cases must contain only VERIFICATION steps',
-      actual: passed ? 'Verification-only respected' : `${completeErrors.length} violations`,
+      expected: 'COMPLETE cases must contain >=1 evidence-backed VERIFICATION steps only',
+      actual: passed ? 'Verification-only & non-empty respected' : `${completeErrors.length} violations`,
       errors: passed ? [] : completeErrors.slice(0, 5),
     });
   }
@@ -415,10 +421,11 @@ export function validateOutputContent(
     const quotingErrors: string[] = [];
     for (const r of rows) {
       if (r.steps_json.length > 0) {
-        // Raw line must enclose steps_json in quotes
-        const rawJsonPart = r.raw_line.substring(r.raw_line.indexOf(',', r.raw_line.indexOf(',') + 1) + 1);
-        if (!rawJsonPart.startsWith('"') || !rawJsonPart.endsWith('"')) {
-          quotingErrors.push(`${r.case_id}: steps_json is not quoted per RFC 4180`);
+        const rawJsonPart = r.raw_line.substring(r.raw_line.indexOf(',', r.raw_line.indexOf(',') + 1) + 1).trim();
+        const isUnquotedEmptyArray = rawJsonPart === '[]';
+        const isQuoted = rawJsonPart.startsWith('"') && rawJsonPart.endsWith('"');
+        if (!isUnquotedEmptyArray && !isQuoted) {
+          quotingErrors.push(`${r.case_id}: steps_json is not RFC 4180 compliant`);
         }
       }
     }
@@ -427,7 +434,7 @@ export function validateOutputContent(
       rule_no: 14,
       rule_name: 'RFC 4180 CSV Escaping & Quoting Compliance',
       passed,
-      expected: 'All JSON values quoted and internal quotes escaped as ""',
+      expected: 'Valid RFC 4180 quoting (unquoted [] or double-quoted JSON with "" escaping)',
       actual: passed ? 'Strict RFC 4180 compliance' : `${quotingErrors.length} quoting errors`,
       errors: passed ? [] : quotingErrors.slice(0, 5),
     });

@@ -10,14 +10,14 @@ The platform determines whether personal data has truly been deleted, detects re
 
 ## 1. Product Capabilities
 
-- **Evidence-Backed Verification:** Grounded in 94 multimodal evidence records: point-in-time SQL snapshot replicas, JSON state bundles, structured server traces, text shift handovers, and UI console screenshots.
-- **Identity Graph Resolution:** Correlates stable internal `user_id`s with current and historical email aliases, phone changes, name shifts, and cryptographic email hashes via `user_audit_log.csv`.
-- **Temporal State Reconstruction:** Reconstructs resource state strictly at each case's `audit_at` cutoff date. Avoids post-audit leakage and rejects unverifiable workflow claims.
-- **Strict 15-Rule Policy Enforcement:** Evaluates `deletion_rules.csv` across databases, search indices, caches, support messages, attachments, analytics cohorts, and backup archives. Correctly supports permitted account tombstones while redacting direct personal identifiers.
-- **Deterministic Remediation Planning:** Sorts findings, remediation actions, and verification checks strictly in accordance with challenge operation specifications and topological dependencies.
-- **Evaluation Laboratory:** Real-time scoring against `sample_output.csv` with case-level accuracy, step-level precision/recall/F1, field accuracy, and three synthetic adversarial test cases.
-- **Token Usage & Cost Reporting:** Real-time instrumentation of Gemini API calls, token counts, and cost metrics, generating `evaluation/usage_report.md`.
-- **Complete Deliverable Packaging:** Direct in-app downloads of `output.csv` (exact 518 rows), `evaluation_report.md`, `usage_report.md`, and full runnable `code.zip`.
+- **Evidence-Backed Verification (94/94 Manifest Files):** Grounded in all 94 multimodal participant-facing evidence records: 21 SQLite snapshot & replica exports, 27 JSON state bundles & ledgers, 26 structured/unstructured `.log` files (restored from the official challenge starter repository and whitelisted in `.gitignore`), 4 ReportLab PDF documents, 1 shift handover text file, and 11 UI console screenshots.
+- **Identity Graph & Lifecycle Resolution:** Correlates stable internal `user_id`s with current and historical email aliases (case-insensitive), phone changes, and cryptographic email hashes via `user_audit_log.csv`, while isolating multi-lifecycle accounts and near-miss `.jr` decoys.
+- **Temporal State Reconstruction:** Reconstructs resource state strictly at or before each case's `audit_at` cutoff date (`captured_at <= audit_at` and `event_time <= audit_at`), never trusting `reported_status` or workflow claims as proof of deletion.
+- **Strict 15-Rule Policy Enforcement:** Evaluates `deletion_rules.csv` across databases, search indices, caches, support messages, attachments, exports, marketing profiles, analytics cohorts, compliance audit logs, and backup archives. Preserves mandatory retained records and redacted `ACCOUNT_TOMBSTONE` references while flagging exposed direct identifiers.
+- **Deterministic Remediation Planning:** Sorts findings, remediation actions, and verification checks strictly in canonical challenge order (`FINDING` -> `REMEDIATION` -> `VERIFICATION`, disabling data flows and blocking unsafe restores before record mutations).
+- **Evaluation Laboratory:** Live scoring against `dataset/sample_output.csv` (32 official sample cases) plus 6 live participant-authored synthetic edge-case tests in isolated sandboxes.
+- **Zero-Runtime-Cost Reproducibility:** Final 518-case execution runs deterministically via the Python 3 standard library (`0` runtime LLM calls, `$0.00` runtime cost) with offline screenshot OCR cached in `dataset/evidence/extracted_images/`.
+- **Complete Deliverable Packaging:** Root-level `output.csv` (518 rows, 0 empty `COMPLETE` rows), `evaluation/evaluation_report.md`, `evaluation/usage_report.md`, `log.txt`, and `code.zip` (`npm run package`).
 
 ---
 
@@ -120,23 +120,23 @@ npm run test:output       # Phase 4: Exact output.csv Contract (14 rules)
 
 | Test Suite / Phase | Test Count | Pass Rate | Status |
 | :--- | :--- | :--- | :--- |
-| **Phase 1: Production Build & Lint** | 2 builds | 100% | **PASS** (Zero errors) |
+| **Phase 1: Production Build, Lint & Acceptance** | 23 checks | 100% (23/23) | **PASS** (Zero errors) |
 | **Phase 2: Prompt Injection Suite (PI-01 to PI-10)** | 10 tests | 100% (10/10) | **PASS** |
 | **Phase 3: Deletion Policy & Edge Cases (E01 to E20)** | 20 tests | 100% (20/20) | **PASS** |
-| **Phase 4: Exact Output Contract Validation** | 14 rules | 100% (14/14) | **PASS** (518 rows, sorted) |
-| **Phase 5: Sample Dataset Evaluation** | 32 cases | 53.1% Status | **MEASURED** (17/32 matches) |
+| **Phase 4: Exact Output Contract Validation** | 14 rules | 100% (14/14) | **PASS** (518 rows, 0 empty `COMPLETE`) |
+| **Phase 5: Official Sample Evaluation (`sample_output.csv`)** | 32 cases | **100.0% Status** (32/32) | **MEASURED** (100% Finding+Rem, 78.1% Full Seq, 1.000 Step Prec) |
+| **Phase 5b: Participant Synthetic Edge Suite (`code/evaluation/main.py`)** | 6 tests | 100% (6/6) | **PASS** (Separate from official ground truth) |
 | **Phase 6: Full Dataset Reproducibility** | 2 runs | 100% | **PASS** (0-byte drift) |
-| **Phase 7: Model Usage & Credential Scan** | 125 files | 100% | **PASS** (0 secrets in source) |
-| **Phase 8: UI Regression & Endpoints** | 12 routes | 100% (12/12) | **PASS** |
+| **Phase 7: Evidence Manifest & Credential Scan** | 94/94 files | 100% | **PASS** (All 26 `.log` files restored; 0 secrets) |
 
 ---
 
 ## 5. Challenge Rules & Submission URL
 
-- **Challenge URL:** [https://wwww.hackerrank.com/contests/hackerrank-orchestrate-october26/challenges/ghost-data-still-exists](https://wwww.hackerrank.com/contests/hackerrank-orchestrate-october26/challenges/ghost-data-still-exists)
+- **Challenge URL:** [https://www.hackerrank.com/contests/hackerrank-orchestrate-october26/challenges/ghost-data-still-exists](https://www.hackerrank.com/contests/hackerrank-orchestrate-october26/challenges/ghost-data-still-exists)
 - **Submission Output:** `output.csv` with exactly 518 data rows and header `case_id,deletion_status,steps_json`.
 - **Trace Log:** `log.txt` kept updated at repository root.
-- **Archive:** `code.zip` downloadable from the application UI.
+- **Archive:** `code.zip` generated via `npm run package` or downloadable from the application UI.
 
 ---
 

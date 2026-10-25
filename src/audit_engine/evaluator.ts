@@ -3,6 +3,7 @@
  * Evaluates generated audit results against sample ground truth and runs 6 custom synthetic edge tests.
  * Generates evaluation/evaluation_report.md and evaluation/usage_report.md.
  */
+import { execFileSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { AuditCaseResult, AuditStep, DeletionStatus, EvaluationResult, UsageReportData } from '../types';
@@ -388,9 +389,21 @@ export class AuditEvaluator {
       },
     };
 
-    // Write reports to disk
-    this.writeEvaluationReport(result);
-    this.writeUsageReport();
+    // Write synchronized reports via authoritative Python evaluator when using default sample ground truth
+    if (!sampleReqPath && !sampleTruthPath) {
+      try {
+        const pyEval = path.join(this.repoRoot, 'code', 'evaluation', 'main.py');
+        if (fs.existsSync(pyEval)) {
+          execFileSync('python3', [pyEval], { stdio: 'ignore' });
+        } else {
+          this.writeEvaluationReport(result);
+          this.writeUsageReport();
+        }
+      } catch {
+        this.writeEvaluationReport(result);
+        this.writeUsageReport();
+      }
+    }
 
     return result;
   }

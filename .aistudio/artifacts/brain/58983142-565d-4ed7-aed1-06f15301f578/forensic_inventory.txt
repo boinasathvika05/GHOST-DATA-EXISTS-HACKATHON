@@ -1,0 +1,1526 @@
+=== 1. JSON SHAPES ===
+evidence_02 evidence/records/customer_data_snapshot_bundle_20260917.json snapshots:
+  store=account_service coll=customer_profiles len=1 sample=[{'resource_id': 'account_5684', 'customer_reference': 'user_26', 'full_name': 'Mariana Almeida', 'email': 'almeida.mariana@gmail.com', 'phone': '+55 21 90180-9087', 'account_status': 'ACTIVE', 'signup_channel': 'organic_search'}]
+  store=search_service coll=customer_search_documents len=1 sample=[{'resource_id': 'search_8168', 'index_name': 'customer_directory_v3', 'document': {'display_name': None, 'email': 'smartinez6461.jr@gmail.com', 'customer_reference': None}}]
+  store=account_service coll=customer_profiles len=1 sample=[{'resource_id': 'account_5334', 'customer_reference': 'user_24', 'full_name': 'Keiko Nakamura', 'email': 'keiko.nakamura@gmail.com', 'phone': '+81 90 2669 6684', 'account_status': 'ACTIVE', 'signup_channel': 'referral'}]
+  store=analytics_platform coll=customer_analytics_reports len=7 sample=[{'resource_id': 'analytics_5335', 'user_id': None, 'email': None, 'phone': None, 'email_hash': None, 'reporting_window': 'last_90_days', 'metrics': {'sessions_30d': 9, 'products_viewed_30d': 7, 'orders_completed_90d': 0, 'revenue_90d_usd': 0.0}, 'recent_activity': [{'event': 'product_viewed', 'product': 'Stainless steel water bottle'}, {'event': 'added_to_cart', 'product': 'Stainless steel water bottle'}]}, {'resource_id': 'analytics_1895', 'user_id': None, 'email': None, 'phone': None, 'email_hash': None, 'reporting_window': 'last_90_days', 'metrics': {'sessions_30d': 7, 'products_viewed_30d': 8, 'orders_completed_90d': 0, 'revenue_90d_usd': 0.0}, 'recent_activity': [{'event': 'product_viewed', 'product': 'Stainless steel water bottle'}, {'event': 'added_to_cart', 'product': 'Stainless steel water bottle'}]}]
+  store=backup_service coll=backup_catalog len=3 sample=[{'resource_id': 'backup_3120', 'archive_path': 's3://customer-backups/weekly/segment-16.tar.zst', 'subject_reference': 'user_26', 'restore_allowed': False, 'encryption': 'AES-256'}, {'resource_id': 'backup_5970', 'archive_path': 's3://customer-backups/weekly/segment-18.tar.zst', 'subject_reference': 'user_27', 'restore_allowed': False, 'encryption': 'AES-256'}]
+  store=export_service coll=customer_export_jobs len=1 sample=[{'resource_id': 'export_7364', 'owner_email': 'thandiwe.m6866@zoho.com', 'file_name': 'customer_export_7364.zip', 'created_at': '2026-08-28T12:00:00Z', 'expires_at': '2026-10-15T12:00:00Z', 'download_available': True, 'included_sections': ['profile', 'orders', 'saved_addresses']}]
+  store=integration_service coll=connector_configurations len=5 sample=[{'resource_id': 'data_flow_6244', 'connector_name': 'customer-events-to-warehouse-5', 'destination': 'customer_analytics_warehouse', 'subject_selector': 'user_26', 'enabled': False, 'mode': 'continuous_sync'}, {'resource_id': 'data_flow_2295', 'connector_name': 'customer-events-to-warehouse-8', 'destination': 'customer_analytics_warehouse', 'subject_selector': 'user_27', 'enabled': False, 'mode': 'continuous_sync'}]
+  store=search_service coll=customer_search_documents len=5 sample=[{'resource_id': 'search_2912', 'index_name': 'customer_directory_v3', 'document': {'display_name': 'Kofi Agyeman', 'email': 'kagyeman8947@fastmail.com', 'customer_reference': 'user_22'}}, {'resource_id': 'search_898', 'index_name': 'customer_directory_v3', 'document': {'display_name': 'Thandiwe Mthembu', 'email': 'thandiwe.m6866@zoho.com', 'customer_reference': 'user_23'}}]
+  store=security_service coll=security_audit_events len=10 sample=[{'resource_id': 'audit_record_3737', 'subject_reference': 'user_21', 'event_name': 'account_deletion_reviewed', 'actor_type': 'automated_privacy_workflow', 'integrity_seal': 'sha256:0000000000000000000000000000000000000000000000000000000000000e99'}, {'resource_id': 'audit_record_9644', 'subject_reference': 'user_22', 'event_name': 'account_deletion_reviewed', 'actor_type': 'automated_privacy_workflow', 'integrity_seal': 'sha256:00000000000000000000000000000000000000000000000000000000000025ac'}]
+  store=support_platform coll=support_conversations len=6 sample=[{'resource_id': 'support_1034', 'ticket_id': 'CS-5034', 'subject_reference': 'user_22', 'channel': 'email', 'message_text': 'Please send the delivery update to kagyeman8947@fastmail.com. The affected order includes: Ceramic coffee set.'}, {'resource_id': 'support_4715', 'ticket_id': 'CS-8715', 'subject_reference': 'user_26', 'channel': 'email', 'message_text': '[REDACTED]'}]
+  store=account_service coll=customer_profiles len=1 sample=[{'resource_id': 'account_3866', 'customer_reference': 'user_27', 'full_name': 'Ananya Nair', 'email': 'ananya-nair@gmail.com', 'phone': '+91 97441 66195', 'account_status': 'ACTIVE', 'signup_channel': 'referral'}]
+evidence_13 evidence/records/connector_configurations_20260812.json len=39 keys=['record_type', 'recorded_at', 'resource_id', 'result', 'subject_reference', 'system']
+  types_res={('account_service', 'USER_PROFILE', 'NOT_FOUND'): 8, ('account_service', 'USER_PROFILE', 'FOUND'): 3, ('analytics_platform', 'ANALYTICS_PROFILE', 'IDENTIFIABLE'): 2, ('integration_service', 'DATA_FLOW', 'ACTIVE'): 3, ('search_service', 'SEARCH_INDEX_ENTRY', 'FOUND'): 8, ('security_service', 'SECURITY_AUDIT_LOG', 'FOUND'): 10, ('support_platform', 'SUPPORT_MESSAGE', 'IDENTIFIABLE'): 5}
+  sample=[{'recorded_at': '2026-08-12T09:00:00Z', 'system': 'account_service', 'resource_id': 'account_1084', 'record_type': 'USER_PROFILE', 'result': 'NOT_FOUND', 'subject_reference': 'mateo.alvarez@gmail.com'}, {'recorded_at': '2026-08-12T09:00:00Z', 'system': 'account_service', 'resource_id': 'account_1417', 'record_type': 'USER_PROFILE', 'result': 'NOT_FOUND', 'subject_reference': 'o.morgan56@gmail.com'}]
+evidence_36 evidence/records/customer_export_manifest_20260409.json len=46 keys=['record_type', 'recorded_at', 'resource_id', 'result', 'subject_reference', 'system']
+  types_res={('account_service', 'USER_PROFILE', 'FOUND'): 3, ('search_service', 'SEARCH_INDEX_ENTRY', 'FOUND'): 7, ('account_service', 'USER_PROFILE', 'NOT_FOUND'): 9, ('analytics_platform', 'ANALYTICS_PROFILE', 'IDENTIFIABLE'): 3, ('analytics_platform', 'ANALYTICS_PROFILE', 'ANONYMIZED'): 3, ('backup_service', 'BACKUP_ARCHIVE', 'ACTIVE'): 1, ('backup_service', 'BACKUP_ARCHIVE', 'BLOCKED'): 1, ('export_service', 'USER_EXPORT', 'FOUND'): 1, ('integration_service', 'DATA_FLOW', 'ACTIVE'): 3, ('integration_service', 'DATA_FLOW', 'DISABLED'): 1, ('legal_service', 'LEGAL_HOLD_RECORD', 'FOUND'): 1, ('security_service', 'SECURITY_AUDIT_LOG', 'FOUND'): 10, ('support_platform', 'SUPPORT_MESSAGE', 'IDENTIFIABLE'): 2, ('support_platform', 'SUPPORT_MESSAGE', 'REDACTED'): 1}
+  sample=[{'recorded_at': '2026-04-03T12:00:00Z', 'system': 'account_service', 'resource_id': 'account_7618', 'record_type': 'USER_PROFILE', 'result': 'FOUND', 'subject_reference': 'dnakamura7301@gmail.com'}, {'recorded_at': '2026-04-09T09:00:00Z', 'system': 'search_service', 'resource_id': 'search_9606', 'record_type': 'SEARCH_INDEX_ENTRY', 'result': 'FOUND', 'subject_reference': 'camila.almeida.jr@outlook.com'}]
+evidence_50 evidence/records/security_audit_ledger_20261001.json len=20 keys=['record_type', 'recorded_at', 'resource_id', 'result', 'subject_reference', 'system']
+  types_res={('account_service', 'USER_PROFILE', 'FOUND'): 10, ('security_service', 'SECURITY_AUDIT_LOG', 'FOUND'): 10}
+  sample=[{'recorded_at': '2026-10-01T12:00:00Z', 'system': 'account_service', 'resource_id': 'account_1733', 'record_type': 'USER_PROFILE', 'result': 'FOUND', 'subject_reference': 'haruka-kato@gmail.com'}, {'recorded_at': '2026-10-01T12:00:00Z', 'system': 'account_service', 'resource_id': 'account_2176', 'record_type': 'USER_PROFILE', 'result': 'FOUND', 'subject_reference': 'ieriksen5151@fastmail.com'}]
+evidence_51 evidence/records/customer_data_snapshot_bundle_20260915.json snapshots:
+  store=account_service coll=customer_profiles len=0 sample=[]
+  store=identity_service coll=deleted_customer_references len=2 sample=[{'resource_id': 'tombstone_440', 'subject_reference': 'user_541', 'name': None, 'email': None, 'phone': None, 'email_hash': None, 'account_status': 'DELETED'}, {'resource_id': 'tombstone_9178', 'subject_reference': 'user_542', 'name': 'Kofi Addo', 'email': 'addo.kofi@gmail.com', 'phone': '+233 24 991 1328', 'email_hash': '4f4b9c98a05a2dad20e52313cce7809d18c3da544754dcd46d728b0173174b26', 'account_status': 'DELETED'}]
+  store=security_service coll=security_audit_events len=2 sample=[{'resource_id': 'audit_record_6909', 'subject_reference': 'user_541', 'event_name': 'account_deletion_reviewed', 'actor_type': 'automated_privacy_workflow', 'integrity_seal': 'sha256:0000000000000000000000000000000000000000000000000000000000001afd'}, {'resource_id': 'audit_record_7068', 'subject_reference': 'user_542', 'event_name': 'account_deletion_reviewed', 'actor_type': 'automated_privacy_workflow', 'integrity_seal': 'sha256:0000000000000000000000000000000000000000000000000000000000001b9c'}]
+evidence_56 evidence/records/customer_analytics_report_20260907.json len=2 keys=['email', 'email_hash', 'metrics', 'phone', 'recent_activity', 'reporting_window', 'resource_id', 'user_id']
+  all_records=[{'resource_id': 'analytics_901', 'user_id': None, 'email': None, 'phone': None, 'email_hash': None, 'reporting_window': 'last_90_days', 'metrics': {'sessions_30d': 11, 'products_viewed_30d': 24, 'orders_completed_90d': 2, 'revenue_90d_usd': 146.8}, 'recent_activity': [{'event': 'product_viewed', 'product': 'Travel backpack'}, {'event': 'purchase_completed', 'product': 'Travel backpack', 'quantity': 1}]}, {'resource_id': 'analytics_824', 'user_id': 'user_824', 'email': 'dahl.freja@icloud.com', 'phone': '+46 70 226 32 84', 'email_hash': 'd61fb631b92c3bac651984c5cca965640b4a854f1619c2be08e8e2751ed4257b', 'reporting_window': 'last_90_days', 'metrics': {'sessions_30d': 6, 'products_viewed_30d': 9, 'orders_completed_90d': 1, 'revenue_90d_usd': 54.95}, 'recent_activity': [{'event': 'purchase_completed', 'product': 'Smart desk lamp', 'quantity': 1}]}]
+evidence_59 evidence/records/customer_export_jobs_20260914.json len=2 keys=['created_at', 'download_available', 'expires_at', 'file_name', 'included_sections', 'owner_email', 'resource_id']
+  all_records=[{'resource_id': 'export_001', 'owner_email': 'gabriel.costa@proton.me', 'file_name': 'customer_export_001.zip', 'created_at': '2026-08-04T16:11:00Z', 'expires_at': '2026-10-04T16:11:00Z', 'download_available': True, 'included_sections': ['profile', 'orders', 'saved_addresses']}, {'resource_id': 'export_843', 'owner_email': 'aoi-tanaka@gmail.com', 'file_name': 'customer_export_843.zip', 'created_at': '2026-05-10T09:02:00Z', 'expires_at': '2026-06-10T09:02:00Z', 'download_available': False, 'included_sections': ['profile']}]
+
+All snapshot_bundle (data_store, collection) counts: {('account_service', 'customer_profiles'): 25, ('search_service', 'customer_search_documents'): 61, ('analytics_platform', 'customer_analytics_reports'): 50, ('backup_service', 'backup_catalog'): 18, ('export_service', 'customer_export_jobs'): 6, ('integration_service', 'connector_configurations'): 37, ('security_service', 'security_audit_events'): 112, ('support_platform', 'support_conversations'): 41, ('support_platform', 'ticket_attachments'): 7, ('privacy_treatment_service', 'operational_record_history'): 42, ('support_storage_service', 'operational_record_history'): 39, ('legal_service', 'retained_order_records'): 2, ('backup_restore_service', 'operational_record_history'): 43, ('identity_service', 'deleted_customer_references'): 2}
+  evidence_02 ('account_service', 'customer_profiles'): {'resource_id': 'account_5684', 'customer_reference': 'user_26', 'full_name': 'Mariana Almeida', 'email': 'almeida.mariana@gmail.com', 'phone': '+55 21 90180-9087', 'account_status': 'ACTIVE', 'signup_channel': 'organic_search'}
+  evidence_02 ('analytics_platform', 'customer_analytics_reports'): {'resource_id': 'analytics_5208', 'user_id': 'user_29', 'email': 'noah.f4380@outlook.com', 'phone': '+1 (312) 555-0129', 'email_hash': 'b1d07882c40af50936b997d454d5c6518ec22754eedbbf86ca9f6a3c30cc4cf0', 'reporting_window': 'last_90_days', 'metrics': {'sessions_30d': 8, 'products_viewed_30d': 4, 'orders_completed_90d': 3, 'revenue_90d_usd': 169.77}, 'recent_activity': [{'event': 'product_viewed', 'product': 'Noise-cancelling headphones'}, {'event': 'purchase_completed', 'product': 'Noise-cancelling headphones', 'quantity': 1}]}
+  evidence_02 ('analytics_platform', 'customer_analytics_reports'): {'resource_id': 'analytics_5335', 'user_id': None, 'email': None, 'phone': None, 'email_hash': None, 'reporting_window': 'last_90_days', 'metrics': {'sessions_30d': 9, 'products_viewed_30d': 7, 'orders_completed_90d': 0, 'revenue_90d_usd': 0.0}, 'recent_activity': [{'event': 'product_viewed', 'product': 'Stainless steel water bottle'}, {'event': 'added_to_cart', 'product': 'Stainless steel water bottle'}]}
+  evidence_45 ('backup_restore_service', 'operational_record_history'): {'recorded_at': '2026-02-12T09:00:00Z', 'system': 'account_service', 'resource_id': 'account_9031', 'record_type': 'USER_PROFILE', 'result': 'FOUND', 'lookup_value': 'swalker752578@gmail.com'}
+  evidence_02 ('backup_service', 'backup_catalog'): {'resource_id': 'backup_3120', 'archive_path': 's3://customer-backups/weekly/segment-16.tar.zst', 'subject_reference': 'user_26', 'restore_allowed': False, 'encryption': 'AES-256'}
+  evidence_02 ('export_service', 'customer_export_jobs'): {'resource_id': 'export_7364', 'owner_email': 'thandiwe.m6866@zoho.com', 'file_name': 'customer_export_7364.zip', 'created_at': '2026-08-28T12:00:00Z', 'expires_at': '2026-10-15T12:00:00Z', 'download_available': True, 'included_sections': ['profile', 'orders', 'saved_addresses']}
+  evidence_51 ('identity_service', 'deleted_customer_references'): {'resource_id': 'tombstone_9178', 'subject_reference': 'user_542', 'name': 'Kofi Addo', 'email': 'addo.kofi@gmail.com', 'phone': '+233 24 991 1328', 'email_hash': '4f4b9c98a05a2dad20e52313cce7809d18c3da544754dcd46d728b0173174b26', 'account_status': 'DELETED'}
+  evidence_51 ('identity_service', 'deleted_customer_references'): {'resource_id': 'tombstone_440', 'subject_reference': 'user_541', 'name': None, 'email': None, 'phone': None, 'email_hash': None, 'account_status': 'DELETED'}
+  evidence_02 ('integration_service', 'connector_configurations'): {'resource_id': 'data_flow_6244', 'connector_name': 'customer-events-to-warehouse-5', 'destination': 'customer_analytics_warehouse', 'subject_selector': 'user_26', 'enabled': False, 'mode': 'continuous_sync'}
+  evidence_40 ('legal_service', 'retained_order_records'): {'resource_id': 'legal_hold_438', 'subject_reference': 'user_430', 'order_reference': 'ORD-20260438', 'retention_reason': 'payment_dispute_and_tax_record', 'retained_until': '2033-12-31T23:59:59Z'}
+  evidence_22 ('privacy_treatment_service', 'operational_record_history'): {'recorded_at': '2026-06-17T06:00:00Z', 'system': 'account_service', 'resource_id': 'account_945', 'record_type': 'USER_PROFILE', 'result': 'FOUND', 'lookup_value': 'romero.valeria94@icloud.com'}
+  evidence_02 ('search_service', 'customer_search_documents'): {'resource_id': 'search_8168', 'index_name': 'customer_directory_v3', 'document': {'display_name': None, 'email': 'smartinez6461.jr@gmail.com', 'customer_reference': None}}
+  evidence_02 ('security_service', 'security_audit_events'): {'resource_id': 'audit_record_3737', 'subject_reference': 'user_21', 'event_name': 'account_deletion_reviewed', 'actor_type': 'automated_privacy_workflow', 'integrity_seal': 'sha256:0000000000000000000000000000000000000000000000000000000000000e99'}
+  evidence_02 ('support_platform', 'support_conversations'): {'resource_id': 'support_1034', 'ticket_id': 'CS-5034', 'subject_reference': 'user_22', 'channel': 'email', 'message_text': 'Please send the delivery update to kagyeman8947@fastmail.com. The affected order includes: Ceramic coffee set.'}
+  evidence_12 ('support_platform', 'ticket_attachments'): {'resource_id': 'support_2315', 'ticket_id': 'CS-6315', 'file_name': 'delivery_confirmation_84.pdf', 'uploaded_by': 'yuna-jang@proton.me', 'storage_class': 'ticket_attachment'}
+  evidence_31 ('support_storage_service', 'operational_record_history'): {'recorded_at': '2026-05-04T07:00:00Z', 'system': 'search_service', 'resource_id': 'search_9252', 'record_type': 'SEARCH_INDEX_ENTRY', 'result': 'FOUND', 'lookup_value': 'aboateng9675.jr@fastmail.com'}
+
+=== 2. ALL SQL TABLES ===
+Table backup_restore_entries (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'customer_email', 'archive_key', 'restore_allowed', 'updated_at']
+  sample={'resource_id': 'backup_5061', 'customer_reference': None, 'customer_email': 'H.LIM96@GMAIL.COM', 'archive_key': 'archive/customer-data/backup_5061.tar.zst', 'restore_allowed': 1, 'updated_at': '2026-02-13T05:21:17Z'}
+Table connector_subscriptions (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'customer_email', 'connector_name', 'enabled', 'last_delivery_status', 'updated_at']
+  sample={'resource_id': 'data_flow_006', 'customer_reference': None, 'customer_email': 'INES.ROUSSEAU@OUTLOOK.COM', 'connector_name': 'customer_events_connector', 'enabled': 1, 'last_delivery_status': 'delivered', 'updated_at': '2026-02-13T07:20:06Z'}
+Table customer_analytics_profiles (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'email', 'phone', 'email_hash', 'audience_cohort', 'updated_at']
+  sample={'resource_id': 'analytics_5443', 'customer_reference': None, 'email': None, 'phone': None, 'email_hash': None, 'audience_cohort': 'mobile_browser', 'updated_at': '2026-02-13T07:28:49Z'}
+  sample={'resource_id': 'analytics_5893', 'customer_reference': None, 'email': None, 'phone': None, 'email_hash': None, 'audience_cohort': 'home_lifestyle', 'updated_at': '2026-02-13T05:54:17Z'}
+Table customer_data_failover_replica (1 files: ['evidence_52']): cols=['resource_id', 'origin_system', 'collection_name', 'record_json', 'updated_at']
+  sample={'resource_id': 'audit_record_1037', 'origin_system': 'security_service', 'collection_name': 'security_audit_events', 'record_json': '{"resource_id":"audit_record_1037","subject_reference":"user_544","event_name":"account_deletion_reviewed","actor_type":"automated_privacy_workflow","integrity_seal":"sha256:000000000000000000000000000000000000000000000000000000000000040d"}', 'updated_at': '2026-09-20T12:00:00Z'}
+  sample={'resource_id': 'audit_record_1491', 'origin_system': 'security_service', 'collection_name': 'security_audit_events', 'record_json': '{"resource_id":"audit_record_1491","subject_reference":"user_549","event_name":"account_deletion_reviewed","actor_type":"automated_privacy_workflow","integrity_seal":"sha256:00000000000000000000000000000000000000000000000000000000000005d3"}', 'updated_at': '2026-09-20T12:00:00Z'}
+Table customer_data_primary (11 files: ['evidence_05', 'evidence_10', 'evidence_15', 'evidence_20', 'evidence_24', 'evidence_29', 'evidence_33', 'evidence_38', 'evidence_43', 'evidence_47', 'evidence_52']): cols=['resource_id', 'origin_system', 'collection_name', 'record_json', 'updated_at']
+  sample={'resource_id': 'analytics_1738', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_1738","user_id":"user_52","email":"bcarvalho6517@gmail.com","phone":"+55 41 90257-9346","email_hash":"da5e264130abacd259906dd79426f5ad182ed9e69c49fa2dd67166b655f644fa","reporting_window":"last_90_days","metrics":{"sessions_30d":12,"products_viewed_30d":6,"orders_completed_90d":3,"revenue_90d_usd":271.47},"recent_activity":[{"event":"product_viewed","product":"Ceramic coffee set"},{"event":"added_to_cart","product":"Ceramic coffee set"},{"event":"purchase_completed","product":"Ceramic coffee set","quantity":1}]}', 'updated_at': '2026-09-21T10:00:00Z'}
+  sample={'resource_id': 'analytics_2572', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_2572","user_id":null,"email":null,"phone":null,"email_hash":null,"reporting_window":"last_90_days","metrics":{"sessions_30d":18,"products_viewed_30d":34,"orders_completed_90d":2,"revenue_90d_usd":167.42},"recent_activity":[{"event":"product_viewed","product":"Travel backpack"},{"event":"added_to_cart","product":"Travel backpack"},{"event":"purchase_completed","product":"Travel backpack","quantity":1}]}', 'updated_at': '2026-09-21T10:00:00Z'}
+Table customer_data_read_replica (5 files: ['evidence_05', 'evidence_10', 'evidence_15', 'evidence_20', 'evidence_24']): cols=['resource_id', 'origin_system', 'collection_name', 'record_json', 'updated_at']
+  sample={'resource_id': 'account_994', 'origin_system': 'account_service', 'collection_name': 'customer_profiles', 'record_json': '{"resource_id":"account_994","customer_reference":"user_53","full_name":"Diya Kapoor","email":"diya.k4436@outlook.com","phone":"+91 96023 32879","account_status":"ACTIVE","signup_channel":"referral"}', 'updated_at': '2026-09-21T10:00:00Z'}
+  sample={'resource_id': 'analytics_1738', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_1738","user_id":"user_52","email":"bcarvalho6517@gmail.com","phone":"+55 41 90257-9346","email_hash":"da5e264130abacd259906dd79426f5ad182ed9e69c49fa2dd67166b655f644fa","reporting_window":"last_90_days","metrics":{"sessions_30d":12,"products_viewed_30d":6,"orders_completed_90d":3,"revenue_90d_usd":271.47},"recent_activity":[{"event":"product_viewed","product":"Ceramic coffee set"},{"event":"added_to_cart","product":"Ceramic coffee set"},{"event":"purchase_completed","product":"Ceramic coffee set","quantity":1}]}', 'updated_at': '2026-09-21T10:00:00Z'}
+Table customer_data_replica_ap_south (3 files: ['evidence_29', 'evidence_33', 'evidence_38']): cols=['resource_id', 'origin_system', 'collection_name', 'record_json', 'updated_at']
+  sample={'resource_id': 'account_585', 'origin_system': 'account_service', 'collection_name': 'customer_profiles', 'record_json': '{"resource_id":"account_585","customer_reference":"user_305","full_name":"Zofia Zieliński","email":"zofia.z024@outlook.com","phone":"+48 608 009 355","account_status":"ACTIVE","signup_channel":"mobile_app"}', 'updated_at': '2026-05-19T06:00:00Z'}
+  sample={'resource_id': 'analytics_096', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_096","user_id":null,"email":null,"phone":null,"email_hash":null,"reporting_window":"last_90_days","metrics":{"sessions_30d":8,"products_viewed_30d":7,"orders_completed_90d":1,"revenue_90d_usd":54.33},"recent_activity":[{"event":"product_viewed","product":"Noise-cancelling headphones"},{"event":"purchase_completed","product":"Noise-cancelling headphones","quantity":1}]}', 'updated_at': '2026-05-19T06:00:00Z'}
+Table customer_data_replica_eu_west (3 files: ['evidence_29', 'evidence_33', 'evidence_38']): cols=['resource_id', 'origin_system', 'collection_name', 'record_json', 'updated_at']
+  sample={'resource_id': 'analytics_096', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_096","user_id":null,"email":null,"phone":null,"email_hash":null,"reporting_window":"last_90_days","metrics":{"sessions_30d":8,"products_viewed_30d":7,"orders_completed_90d":1,"revenue_90d_usd":54.33},"recent_activity":[{"event":"product_viewed","product":"Noise-cancelling headphones"},{"event":"purchase_completed","product":"Noise-cancelling headphones","quantity":1}]}', 'updated_at': '2026-05-19T06:00:00Z'}
+  sample={'resource_id': 'analytics_3678', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_3678","user_id":null,"email":null,"phone":null,"email_hash":null,"reporting_window":"last_90_days","metrics":{"sessions_30d":8,"products_viewed_30d":24,"orders_completed_90d":3,"revenue_90d_usd":203.67},"recent_activity":[{"event":"product_viewed","product":"Cotton bedsheet set"},{"event":"purchase_completed","product":"Cotton bedsheet set","quantity":1}]}', 'updated_at': '2026-05-19T06:00:00Z'}
+Table customer_data_reporting_replica (2 files: ['evidence_43', 'evidence_47']): cols=['resource_id', 'origin_system', 'collection_name', 'record_json', 'updated_at']
+  sample={'resource_id': 'account_3183', 'origin_system': 'account_service', 'collection_name': 'customer_profiles', 'record_json': '{"resource_id":"account_3183","customer_reference":"user_451","full_name":"Kojo Gyasi","email":"k.gyasi98@yahoo.com","phone":"+233 24 797 9252","account_status":"ACTIVE","signup_channel":"paid_social"}', 'updated_at': '2026-03-05T12:00:00Z'}
+  sample={'resource_id': 'analytics_1126', 'origin_system': 'analytics_platform', 'collection_name': 'customer_analytics_reports', 'record_json': '{"resource_id":"analytics_1126","user_id":null,"email":null,"phone":null,"email_hash":null,"reporting_window":"last_90_days","metrics":{"sessions_30d":12,"products_viewed_30d":14,"orders_completed_90d":1,"revenue_90d_usd":31.73},"recent_activity":[{"event":"product_viewed","product":"Cotton bedsheet set"},{"event":"added_to_cart","product":"Cotton bedsheet set"},{"event":"purchase_completed","product":"Cotton bedsheet set","quantity":1}]}', 'updated_at': '2026-03-05T12:00:00Z'}
+Table customer_exports (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'owner_email', 'owner_phone', 'object_key', 'updated_at']
+Table customer_profiles (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'full_name', 'email', 'phone', 'email_hash', 'account_status', 'updated_at']
+  sample={'resource_id': 'account_3626', 'customer_reference': None, 'full_name': None, 'email': 'daniel.m47291@outlook.com', 'phone': None, 'email_hash': None, 'account_status': 'DELETION_PENDING', 'updated_at': '2026-02-13T07:43:27Z'}
+  sample={'resource_id': 'account_634', 'customer_reference': None, 'full_name': None, 'email': 'O.ERIKSEN10@YAHOO.COM', 'phone': None, 'email_hash': None, 'account_status': 'DELETION_PENDING', 'updated_at': '2026-02-13T06:34:26Z'}
+Table customer_profiles_failover_replica (1 files: ['evidence_54']): cols=['resource_id', 'user_id', 'full_name', 'email', 'phone', 'account_status', 'updated_at']
+  sample={'resource_id': 'account_005', 'user_id': 'user_05', 'full_name': 'Leila Haddad', 'email': 'leila.haddad@yahoo.com', 'phone': '+212 6 48 27 15 93', 'account_status': 'ACTIVE', 'updated_at': '2026-09-02T22:45:00Z'}
+  sample={'resource_id': 'account_8741', 'user_id': 'user_8741', 'full_name': 'Karim El-Masri', 'email': 'karim.elmasri@gmail.com', 'phone': '+971 50 731 6284', 'account_status': 'ACTIVE', 'updated_at': '2026-09-02T22:45:00Z'}
+Table customer_profiles_primary (1 files: ['evidence_54']): cols=['resource_id', 'user_id', 'full_name', 'email', 'phone', 'account_status', 'updated_at']
+  sample={'resource_id': 'account_8741', 'user_id': 'user_8741', 'full_name': 'Karim El-Masri', 'email': 'karim.elmasri@gmail.com', 'phone': '+971 50 731 6284', 'account_status': 'ACTIVE', 'updated_at': '2026-09-02T22:45:00Z'}
+  sample={'resource_id': 'account_9116', 'user_id': 'user_9116', 'full_name': 'Mateo Rios Gil', 'email': 'm.rios.gil@outlook.com', 'phone': '+34 628 491 736', 'account_status': 'ACTIVE', 'updated_at': '2026-09-02T22:45:00Z'}
+Table customer_search_documents (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'display_name', 'email', 'phone', 'email_hash', 'index_name', 'updated_at']
+  sample={'resource_id': 'search_2799', 'customer_reference': None, 'display_name': None, 'email': 'O.ERIKSEN10@YAHOO.COM', 'phone': None, 'email_hash': None, 'index_name': 'customer_directory_v3', 'updated_at': '2026-02-13T05:05:05Z'}
+  sample={'resource_id': 'search_3169', 'customer_reference': None, 'display_name': None, 'email': 'lima.larissa@gmail.com', 'phone': None, 'email_hash': None, 'index_name': 'customer_directory_v3', 'updated_at': '2026-02-13T04:51:43Z'}
+Table search_documents_primary (1 files: ['evidence_57']): cols=['resource_id', 'display_name', 'email', 'source_resource_id', 'indexed_at']
+  sample={'resource_id': 'search_001', 'display_name': 'Jonas Berg', 'email': 'jonas.berg@outlook.com', 'source_resource_id': 'account_006', 'indexed_at': '2026-09-09T22:12:00Z'}
+  sample={'resource_id': 'search_8814', 'display_name': 'Jonas Berglund', 'email': 'jonas.berglund@outlook.com', 'source_resource_id': 'account_8814', 'indexed_at': '2026-09-09T22:13:00Z'}
+Table security_audit_records (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'subject_reference', 'event_code', 'retention_until', 'updated_at']
+  sample={'resource_id': 'audit_record_1112', 'subject_reference': 'user_492', 'event_code': 'ACCOUNT_DELETION_RECORDED', 'retention_until': '2031-12-31T23:59:59Z', 'updated_at': '2026-02-13T06:33:08Z'}
+  sample={'resource_id': 'audit_record_5238', 'subject_reference': 'user_500', 'event_code': 'PRIVACY_REQUEST_ACCEPTED', 'retention_until': '2032-06-30T23:59:59Z', 'updated_at': '2026-02-13T06:41:16Z'}
+Table snapshot_scope (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['origin_system', 'captured_at']
+  sample={'origin_system': 'account_service', 'captured_at': '2026-02-13T07:43:27Z'}
+  sample={'origin_system': 'analytics_platform', 'captured_at': '2026-02-13T07:43:27Z'}
+Table support_records (11 files: ['evidence_63', 'evidence_66', 'evidence_69', 'evidence_72', 'evidence_75', 'evidence_78', 'evidence_81', 'evidence_84', 'evidence_87', 'evidence_90', 'evidence_93']): cols=['resource_id', 'customer_reference', 'requester_name', 'requester_email', 'requester_phone', 'message_excerpt', 'updated_at']
+  sample={'resource_id': 'support_6391', 'customer_reference': None, 'requester_name': None, 'requester_email': 'lima.larissa@gmail.com', 'requester_phone': None, 'message_excerpt': 'Customer supplied contact details for a delivery query.', 'updated_at': '2026-02-13T06:47:53Z'}
+  sample={'resource_id': 'support_9075', 'customer_reference': None, 'requester_name': None, 'requester_email': 'valvarez255390@gmail.com', 'requester_phone': None, 'message_excerpt': 'Customer contacted support about account access.', 'updated_at': '2026-02-13T06:47:50Z'}
+
+=== 3. ALL 26 LOG FILES FORMATS & EVENTS ===
+evidence_01 (evidence/logs/service_events_ap_south_20260915.log, origin=central_observability_export, cap=2026-09-15T11:59:39Z, lines=104):
+  2026-09-15T08:51:43Z level=DEBUG service=log_router instance=collector-3 event=export_started sources=platform_services expected_source_events=98
+  2026-09-15T08:51:45Z level=DEBUG service=search_service instance=search-2 pod=search-12cc region=ap-south-1 trace_id=tr-5887496 event=index_query_started match_key="g.silva76.jr@gmail.com" attempt=1
+  2026-09-15T08:51:53Z level=DEBUG service=search_service instance=search-2 pod=search-12cc region=ap-south-1 trace_id=tr-5887496 event=connection_acquired pool=search_service_replica wait_ms=56
+  2026-09-15T08:51:55Z level=WARN service=search_service instance=search-2 pod=search-12cc region=ap-south-1 trace_id=tr-5887496 event=dependency_retry dependency=search_service_store attempt=1 retry_in_ms=474 reason=read_timeout
+  2026-09-15T08:51:56Z level=INFO service=search_service instance=search-2 pod=search-12cc region=ap-south-1 trace_id=tr-5887496 event=dependency_recovered attempt=2 route=primary
+  2026-09-15T08:51:57Z level=INFO service=search_service instance=search-2 pod=search-12cc region=ap-south-1 trace_id=tr-5887496 resource_id=search_1874 event=index_query_completed index=customer_directory_v3 result=hit shard=2 took_ms=17
+evidence_06 (evidence/logs/structured_service_events_eu_west_20260918.log, origin=central_observability_export, cap=2026-09-18T11:55:24Z, lines=112):
+  2026-09-10T08:56:15Z {"severity":"DEBUG","logger":"log_router","service":"log_router","instance":"collector-8","event":"export_started","sources":"platform_services","expected_source_events":"106"}
+  2026-09-10T08:56:17Z {"severity":"DEBUG","logger":"account_service","service":"account_service","instance":"account-6","pod":"account-ca1e","region":"us-east-2","trace_id":"tr-5563868","event":"profile_lookup_started","lookup_key":"collins.grace@icloud.com","attempt":"1"}
+  2026-09-10T08:56:19Z {"severity":"DEBUG","logger":"account_service","service":"account_service","instance":"account-6","pod":"account-ca1e","region":"us-east-2","trace_id":"tr-5563868","event":"cache_lookup","result":"miss","cache":"account_service_lookup_v2"}
+  2026-09-10T08:56:20Z {"severity":"DEBUG","logger":"account_service","service":"account_service","instance":"account-6","pod":"account-ca1e","region":"us-east-2","trace_id":"tr-5563868","resource_id":"account_6633","event":"profile_lookup_completed","rows":"1","http_status":"200","duration_ms":"84"}
+  2026-09-11T23:56:06Z {"severity":"DEBUG","logger":"feature_flags","service":"feature_flags","instance":"flags-3","event":"flag_snapshot_loaded","revision":"428"}
+  2026-09-13T14:55:55Z {"severity":"WARN","logger":"circuit_breaker","service":"circuit_breaker","instance":"breaker-2","event":"slow_call_rate","window":"37s","rate_pct":"15"}
+evidence_08 (evidence/logs/search_index_diagnostic_20260906.log, origin=search_index_service, cap=2026-09-06T07:00:00Z, lines=36):
+  2026-08-31T07:00:00Z INFO service=search_index_service event=record_lookup seq=1 system="account_service" resource_id="account_8473" record_type="USER_PROFILE" result="FOUND" subject_reference="marek.zielinski@gmail.com"
+  2026-09-06T07:00:00Z INFO service=search_index_service event=record_lookup seq=2 system="account_service" resource_id="account_2387" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="cchevalier408794@fastmail.com"
+  2026-09-06T07:00:00Z INFO service=search_index_service event=record_lookup seq=3 system="account_service" resource_id="account_2449" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="liam-walker@proton.me"
+  2026-09-06T07:00:00Z INFO service=search_index_service event=record_lookup seq=4 system="account_service" resource_id="account_3609" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="doyun.lim@outlook.com"
+  2026-09-06T07:00:00Z INFO service=search_index_service event=record_lookup seq=5 system="account_service" resource_id="account_4911" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="NILS.L200695@ZOHO.COM"
+  2026-09-06T07:00:00Z INFO service=search_index_service event=record_lookup seq=6 system="account_service" resource_id="account_6075" record_type="USER_PROFILE" result="FOUND" subject_reference="mei.k952079@outlook.com"
+evidence_11 (evidence/logs/syslog_archive_us_east_20260824.log, origin=central_observability_export, cap=2026-08-24T13:56:43Z, lines=118):
+  2026-08-22T10:51:11Z <15>1 node-1 account_service tr-4973247 - - level=DEBUG instance="account-2" pod="account-0525" region="eu-west-1" event="profile_lookup_started" lookup_key="nana.b9576@outlook.com" attempt="1"
+  2026-08-22T10:51:15Z <15>1 node-1 account_service tr-4973247 - - level=DEBUG instance="account-2" pod="account-0525" region="eu-west-1" event="connection_acquired" pool="account_service_primary" wait_ms="22"
+  2026-08-22T10:51:17Z <15>1 node-1 account_service tr-4973247 - - level=DEBUG instance="account-2" pod="account-0525" region="eu-west-1" resource_id="account_1785" event="profile_lookup_completed" rows="1" http_status="200" duration_ms="50"
+  2026-08-22T10:51:27Z <15>1 node-3 support_platform tr-6231467 - - level=DEBUG instance="support-3" pod="support-4ae9" region="eu-west-1" event="attachment_scan_started" scan_key="joao-santos@proton.me" attempt="1"
+  2026-08-22T10:51:31Z <15>1 node-3 support_platform tr-6231467 - - level=DEBUG instance="support-3" pod="support-4ae9" region="eu-west-1" event="connection_acquired" pool="support_platform_primary" wait_ms="14"
+  2026-08-22T10:51:33Z <12>1 node-3 support_platform tr-6231467 - - level=WARN instance="support-3" pod="support-4ae9" region="eu-west-1" resource_id="support_9309" event="attachment_pii_scan" matched_value="joao-santos@proton.me" file="delivery_confirmation_94.pdf" detector="direct_identifier"
+evidence_16 (evidence/logs/application_trace_ap_northeast_20260730.log, origin=central_observability_export, cap=2026-07-30T08:53:12Z, lines=93):
+  2026-07-28T05:51:16Z [DEBUG] [log_router] [collector-9] export_started: instance="collector-9" sources="platform_services" expected_source_events="87"
+  2026-07-28T05:51:18Z [DEBUG] [account_service] [tr-6074163] profile_lookup_started: instance="account-5" pod="account-886d" region="eu-west-1" lookup_key="l.nascimento40@gmail.com" attempt="1"
+  2026-07-28T05:51:20Z [DEBUG] [account_service] [tr-6074163] cache_lookup: instance="account-5" pod="account-886d" region="eu-west-1" result="miss" cache="account_service_lookup_v2"
+  2026-07-28T05:51:21Z [INFO] [account_service] [tr-6074163] profile_lookup_completed: instance="account-5" pod="account-886d" region="eu-west-1" resource_id="account_7947" rows="0" http_status="404" duration_ms="70"
+  2026-07-28T05:51:38Z [DEBUG] [support_platform] [tr-2053433] message_scan_started: instance="support-6" pod="support-5d69" region="eu-west-1" subject_key="menon.arjun@gmail.com" attempt="1"
+  2026-07-28T05:51:40Z [DEBUG] [support_platform] [tr-2053433] cache_lookup: instance="support-6" pod="support-5d69" region="eu-west-1" result="miss" cache="support_platform_lookup_v2"
+evidence_21 (evidence/logs/operations_stream_eu_central_20260705.log, origin=central_observability_export, cap=2026-07-05T07:54:27Z, lines=128):
+  2026-07-03T07:51:30Z | DEBUG | log_router | collector-5 | export_started | instance="collector-5" sources="platform_services" expected_source_events="122"
+  2026-07-03T07:51:32Z | DEBUG | security_service | tr-5156005 | audit_record_read_completed | instance="security-6" pod="security-7e9b" region="eu-central-1" resource_id="audit_record_4413" integrity_check="passed" rows="1" correlation_key="user_211"
+  2026-07-03T07:51:49Z | DEBUG | analytics_platform | tr-4862866 | analytics_profile_scan_started | instance="analytics-5" pod="analytics-2fcc" region="ap-south-1" lookup_key="analytics_257" attempt="1"
+  2026-07-03T07:51:55Z | DEBUG | analytics_platform | tr-4862866 | connection_acquired | instance="analytics-5" pod="analytics-2fcc" region="ap-south-1" pool="analytics_platform_replica" wait_ms="25"
+  2026-07-03T07:51:57Z | WARN | analytics_platform | tr-4862866 | dependency_retry | instance="analytics-5" pod="analytics-2fcc" region="ap-south-1" dependency="analytics_platform_store" attempt="1" retry_in_ms="377" reason="read_timeout"
+  2026-07-03T07:51:58Z | INFO | analytics_platform | tr-4862866 | dependency_recovered | instance="analytics-5" pod="analytics-2fcc" region="ap-south-1" attempt="2" route="primary"
+evidence_25 (evidence/logs/cloud_runtime_export_us_west_20260608.log, origin=central_observability_export, cap=2026-06-08T09:58:28Z, lines=128):
+  2026-06-08T06:52:07Z requestId=collector-1 level=DEBUG function=log_router message="instance=\"collector-1\" event=\"export_started\" sources=\"platform_services\" expected_source_events=\"123\""
+  2026-06-08T06:52:09Z requestId=tr-1108860 level=INFO function=search_service message="instance=\"search-3\" pod=\"search-0696\" region=\"us-east-2\" resource_id=\"search_021\" event=\"index_query_completed\" index=\"customer_directory_v3\" result=\"hit\" shard=\"9\" took_ms=\"24\" correlation_key=\"mrios9507.jr@fastmail.com\""
+  2026-06-08T07:29:24Z requestId=resolver-3 level=DEBUG function=dns_cache message="instance=\"resolver-3\" event=\"cache_refresh\" entries=\"110\""
+  2026-06-08T08:06:40Z requestId=vault-4 level=INFO function=secret_agent message="instance=\"vault-4\" event=\"lease_extended\" ttl_seconds=\"1227\""
+  2026-06-08T08:43:56Z requestId=notify-4 level=ERROR function=webhook_delivery message="instance=\"notify-4\" event=\"delivery_abandoned\" destination=\"status_page\" attempts=\"5\" http_status=\"503\""
+  2026-06-08T09:21:12Z requestId=ext-3 level=DEBUG function=lambda_extension message="instance=\"ext-3\" event=\"telemetry_flushed\" records=\"91\""
+evidence_30 (evidence/logs/service_events_sa_east_20260516.log, origin=central_observability_export, cap=2026-05-16T11:58:25Z, lines=110):
+  2026-05-14T11:51:20Z level=INFO service=account_service instance=account-4 pod=account-e506 region=us-east-2 trace_id=tr-4210650 resource_id=account_1530 event=profile_lookup_completed rows=0 http_status=404 duration_ms=44 correlation_key="mrousseau7133@gmail.com"
+  2026-05-14T11:51:23Z level=DEBUG service=search_service instance=search-3 pod=search-eb12 region=us-east-2 trace_id=tr-0398528 event=index_query_started match_key="ethan-morgan@gmail.com" attempt=1
+  2026-05-14T11:51:32Z level=DEBUG service=search_service instance=search-3 pod=search-eb12 region=us-east-2 trace_id=tr-0398528 event=cache_lookup result=miss cache=search_service_lookup_v2
+  2026-05-14T11:51:33Z level=INFO service=search_service instance=search-3 pod=search-eb12 region=us-east-2 trace_id=tr-0398528 resource_id=search_8665 event=index_query_completed index=customer_directory_v3 result=hit shard=1 took_ms=19
+  2026-05-14T11:52:29Z level=DEBUG service=account_service instance=account-2 pod=account-0a19 region=eu-west-1 trace_id=tr-1265803 event=profile_lookup_started lookup_key="k.nasser9089@yahoo.com" attempt=1
+  2026-05-14T11:52:37Z level=DEBUG service=account_service instance=account-2 pod=account-0a19 region=eu-west-1 trace_id=tr-1265803 event=cache_lookup result=miss cache=account_service_lookup_v2
+evidence_34 (evidence/logs/structured_service_events_ca_central_20260419.log, origin=central_observability_export, cap=2026-04-19T06:59:43Z, lines=136):
+  2026-04-19T06:51:11Z {"severity":"DEBUG","logger":"log_router","service":"log_router","instance":"collector-2","event":"export_started","sources":"platform_services","expected_source_events":"130"}
+  2026-04-19T06:51:13Z {"severity":"DEBUG","logger":"search_service","service":"search_service","instance":"search-6","pod":"search-56f3","region":"eu-central-1","trace_id":"tr-7722221","event":"index_query_started","match_key":"dubois.ines94@icloud.com","attempt":"1"}
+  2026-04-19T06:51:17Z {"severity":"DEBUG","logger":"search_service","service":"search_service","instance":"search-6","pod":"search-56f3","region":"eu-central-1","trace_id":"tr-7722221","event":"connection_acquired","pool":"search_service_replica","wait_ms":"44"}
+  2026-04-19T06:51:19Z {"severity":"WARN","logger":"search_service","service":"search_service","instance":"search-6","pod":"search-56f3","region":"eu-central-1","trace_id":"tr-7722221","event":"dependency_retry","dependency":"search_service_store","attempt":"1","retry_in_ms":"365","reason":"read_timeout"}
+  2026-04-19T06:51:20Z {"severity":"INFO","logger":"search_service","service":"search_service","instance":"search-6","pod":"search-56f3","region":"eu-central-1","trace_id":"tr-7722221","event":"dependency_recovered","attempt":"2","route":"primary"}
+  2026-04-19T06:51:21Z {"severity":"INFO","logger":"search_service","service":"search_service","instance":"search-6","pod":"search-56f3","region":"eu-central-1","trace_id":"tr-7722221","resource_id":"search_9365","event":"index_query_completed","index":"customer_directory_v3","result":"hit","shard":"5","took_ms":"6"}
+evidence_39 (evidence/logs/syslog_archive_ap_southeast_20260325.log, origin=central_observability_export, cap=2026-03-25T08:59:44Z, lines=114):
+  2026-03-25T08:51:13Z <15>1 node-8 log_router collector-7 - - level=DEBUG instance="collector-7" event="export_started" sources="platform_services" expected_source_events="109"
+  2026-03-25T08:51:15Z <15>1 node-1 support_platform tr-7458912 - - level=DEBUG instance="support-4" pod="support-6150" region="ap-south-1" event="message_scan_started" subject_key="silva.mariana@icloud.com" attempt="1"
+  2026-03-25T08:51:21Z <15>1 node-1 support_platform tr-7458912 - - level=DEBUG instance="support-4" pod="support-6150" region="ap-south-1" event="connection_acquired" pool="support_platform_primary" wait_ms="1"
+  2026-03-25T08:51:23Z <12>1 node-1 support_platform tr-7458912 - - level=WARN instance="support-4" pod="support-6150" region="ap-south-1" resource_id="support_9464" event="message_pii_scan" matched_value="silva.mariana@icloud.com" detector="direct_identifier"
+  2026-03-25T08:51:51Z <15>1 node-7 support_platform tr-6141219 - - level=DEBUG instance="support-4" pod="support-b427" region="eu-central-1" event="attachment_scan_started" scan_key="ananya-jain@proton.me" attempt="1"
+  2026-03-25T08:51:54Z <14>1 node-4 account_service tr-3269055 - - level=INFO instance="account-6" pod="account-56bf" region="eu-central-1" resource_id="account_7606" event="profile_lookup_completed" rows="0" http_status="404" duration_ms="61" correlation_key="storres487178@fastmail.com"
+evidence_41 (evidence/logs/notification_delivery_20260315.log, origin=downstream_delivery_service, cap=2026-03-15T07:00:00Z, lines=39):
+  2026-03-15T07:00:00Z INFO service=downstream_delivery_service event=record_lookup seq=1 system="account_service" resource_id="account_022" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="zofia-novak@gmail.com"
+  2026-03-15T07:00:00Z INFO service=downstream_delivery_service event=record_lookup seq=2 system="account_service" resource_id="account_1538" record_type="USER_PROFILE" result="FOUND" subject_reference="n.mokoena70@yahoo.com"
+  2026-03-15T07:00:00Z INFO service=downstream_delivery_service event=record_lookup seq=3 system="account_service" resource_id="account_1680" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="lkhalil7413@gmail.com"
+  2026-03-15T07:00:00Z INFO service=downstream_delivery_service event=record_lookup seq=4 system="account_service" resource_id="account_1897" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="tanaka.ren@icloud.com"
+  2026-03-15T07:00:00Z INFO service=downstream_delivery_service event=record_lookup seq=5 system="account_service" resource_id="account_3002" record_type="USER_PROFILE" result="FOUND" subject_reference="tunde.a533297@outlook.com"
+  2026-03-15T07:00:00Z INFO service=downstream_delivery_service event=record_lookup seq=6 system="account_service" resource_id="account_3078" record_type="USER_PROFILE" result="NOT_FOUND" subject_reference="lindberg.freja@gmail.com"
+evidence_44 (evidence/logs/application_trace_eu_north_20260302.log, origin=central_observability_export, cap=2026-03-02T10:59:23Z, lines=125):
+  2026-02-22T10:58:43Z [DEBUG] [log_router] [collector-3] export_started: instance="collector-3" sources="platform_services" expected_source_events="119"
+  2026-02-22T10:58:45Z [DEBUG] [account_service] [tr-9071194] profile_lookup_started: instance="account-1" pod="account-0410" region="ap-south-1" lookup_key="isabela.rodrigues@gmail.com" attempt="1"
+  2026-02-22T10:58:51Z [DEBUG] [account_service] [tr-9071194] profile_lookup_completed: instance="account-1" pod="account-0410" region="ap-south-1" resource_id="account_7023" rows="1" http_status="200" duration_ms="59"
+  2026-02-24T01:22:52Z [ERROR] [webhook_delivery] [notify-8] delivery_abandoned: instance="notify-8" destination="status_page" attempts="5" http_status="503"
+  2026-02-25T15:46:59Z [DEBUG] [thread_pool] [app-8] pool_sample: instance="app-8" active="30" queued="2"
+  2026-02-27T06:11:06Z [INFO] [runtime_config] [app-8] properties_reloaded: instance="app-8" changed="2"
+evidence_48 (evidence/logs/operations_stream_me_central_20260203.log, origin=central_observability_export, cap=2026-02-03T05:59:42Z, lines=103):
+  2026-02-03T05:51:23Z | DEBUG | security_service | tr-4612767 | audit_record_query_started | instance="security-1" pod="security-5049" region="eu-west-1" subject_ref="user_517" attempt="1"
+  2026-02-03T05:51:28Z | DEBUG | security_service | tr-4612767 | connection_acquired | instance="security-1" pod="security-5049" region="eu-west-1" pool="security_service_primary" wait_ms="24"
+  2026-02-03T05:51:30Z | DEBUG | security_service | tr-4612767 | audit_record_read_completed | instance="security-1" pod="security-5049" region="eu-west-1" resource_id="audit_record_4027" integrity_check="passed" rows="1"
+  2026-02-03T05:51:41Z | DEBUG | security_service | tr-7075997 | audit_record_query_started | instance="security-4" pod="security-0105" region="eu-west-1" subject_ref="user_513" attempt="1"
+  2026-02-03T05:51:48Z | DEBUG | security_service | tr-7075997 | connection_acquired | instance="security-4" pod="security-0105" region="eu-west-1" pool="security_service_primary" wait_ms="7"
+  2026-02-03T05:51:49Z | DEBUG | security_service | tr-6428706 | audit_record_query_started | instance="security-2" pod="security-2e02" region="us-east-2" subject_ref="user_516" attempt="1"
+evidence_53 (evidence/logs/cloud_runtime_export_af_south_20260930.log, origin=central_observability_export, cap=2026-09-30T11:59:44Z, lines=305):
+  2026-09-30T11:51:01Z requestId=collector-4 level=DEBUG function=log_router message="instance=\"collector-4\" event=\"export_started\" sources=\"platform_services\" expected_source_events=\"300\""
+  2026-09-30T11:51:03Z requestId=tr-2263120 level=DEBUG function=profile_service message="instance=\"profile-3\" pod=\"profile-c062\" region=\"us-east-2\" resource_id=\"account_66777\" event=\"profile_lookup_completed\" rows=\"1\" http_status=\"200\" duration_ms=\"53\" correlation_key=\"a.watanabe06@yahoo.com\""
+  2026-09-30T11:51:06Z requestId=tr-4101190 level=DEBUG function=profile_service message="instance=\"profile-4\" pod=\"profile-36f2\" region=\"us-east-2\" resource_id=\"account_75954\" event=\"profile_lookup_completed\" rows=\"1\" http_status=\"200\" duration_ms=\"17\" correlation_key=\"jjung0683@fastmail.com\""
+  2026-09-30T11:51:06Z requestId=tr-4429940 level=DEBUG function=profile_service message="instance=\"profile-6\" pod=\"profile-27c2\" region=\"us-east-2\" resource_id=\"account_46079\" event=\"profile_lookup_completed\" rows=\"1\" http_status=\"200\" duration_ms=\"22\" correlation_key=\"mathis.f808@outlook.com\""
+  2026-09-30T11:51:09Z requestId=tr-6596760 level=DEBUG function=profile_service message="instance=\"profile-2\" pod=\"profile-8f22\" region=\"us-east-2\" resource_id=\"account_25381\" event=\"profile_lookup_completed\" rows=\"1\" http_status=\"200\" duration_ms=\"74\" correlation_key=\"naledi-nkosi@gmail.com\""
+  2026-09-30T11:51:09Z requestId=tr-6268010 level=DEBUG function=profile_service message="instance=\"profile-7\" pod=\"profile-9e52\" region=\"us-east-2\" resource_id=\"account_55256\" event=\"profile_lookup_completed\" rows=\"1\" http_status=\"200\" duration_ms=\"69\" correlation_key=\"dahl.freja@icloud.com\""
+evidence_61 (evidence/logs/support_replica.log, origin=support_platform, cap=2026-09-17T22:00:19Z, lines=10):
+  2026-09-17T22:00:00Z level=DEBUG service=support_replica instance=support-eu-03 pod=replica-7c9f event=batch_started batch=rp-7718 source=legacy_contact_index cursor=884019
+  2026-09-17T22:00:02Z level=DEBUG service=support_replica instance=support-eu-03 pod=replica-7c9f trace_id=tr-rp-4104 event=contact_query_started lookup_key=customer4104@yahoo.com
+  2026-09-17T22:00:03Z level=INFO service=support_replica instance=support-eu-03 pod=replica-7c9f trace_id=tr-rp-4104 event=contact_query_completed resource_id=support_4104 rows=1 latency_ms=18
+  2026-09-17T22:00:04Z level=DEBUG service=support_replica instance=support-eu-03 pod=replica-7c9f trace_id=tr-rp-002 event=contact_query_started lookup_key=nadia.ionescu@yahoo.com source=legacy_contact_index
+  2026-09-17T22:00:05Z level=INFO service=support_replica instance=support-eu-03 pod=replica-7c9f trace_id=tr-rp-002 event=contact_query_completed resource_id=support_002 rows=1 latency_ms=23
+  2026-09-17T22:00:06Z level=WARN service=support_replica instance=support-eu-03 pod=replica-7c9f trace_id=tr-rp-002 event=deletion_marker_check resource_id=support_002 marker_found=false last_write=2026-09-07T10:01:00Z
+evidence_64 (evidence/logs/resource_lookup_trace_20260218_083911.log, origin=service_readback_logs, cap=2026-02-18T08:39:11Z, lines=54):
+  2026-02-18T05:47:12Z level=INFO service=readback_collector event=export_started target_count=26 mode=point_in_time
+  2026-02-18T05:47:12Z level=DEBUG service=integration_service trace_id=rb-054712-001 event=connector_config_read_started resource_id=data_flow_3669 lookup_key=t.oliveira6897@gmail.com
+  2026-02-18T05:47:12Z level=INFO service=integration_service trace_id=rb-054712-001 event=connector_config_read_completed resource_id=data_flow_3669 enabled=true last_delivery_status=delivered connector_name=analytics_identity_bridge customer_email=t.oliveira6897@gmail.com customer_reference=null
+  2026-02-18T05:47:23Z level=DEBUG service=analytics_platform trace_id=rb-054723-002 event=analytics_profile_read_started resource_id=analytics_1575 lookup_key=eamponsah5039@fastmail.com
+  2026-02-18T05:47:23Z level=INFO service=analytics_platform trace_id=rb-054723-002 event=analytics_profile_read_completed resource_id=analytics_1575 customer_reference=null email=eamponsah5039@fastmail.com phone=null email_hash=null audience_cohort=returning_customer
+  2026-02-18T06:02:13Z level=DEBUG service=export_service trace_id=rb-060213-003 event=export_metadata_read_started resource_id=export_6406 lookup_key=eamponsah5039@fastmail.com
+evidence_67 (evidence/logs/resource_lookup_trace_20260310_061801.log, origin=service_readback_logs, cap=2026-03-10T06:18:01Z, lines=4):
+  2026-03-10T06:18:01Z level=INFO service=readback_collector event=export_started target_count=1 mode=point_in_time
+  2026-03-10T06:18:01Z level=DEBUG service=account_service trace_id=rb-061801-001 event=profile_lookup_started resource_id=account_6523 lookup_key=leonie.g9352@outlook.com
+  2026-03-10T06:18:01Z level=INFO service=account_service trace_id=rb-061801-001 event=profile_lookup_completed resource_id=account_6523 rows=0 http_status=404
+  2026-03-10T06:18:01Z level=INFO service=readback_collector event=export_completed queries=1 dropped=0
+evidence_70 (evidence/logs/resource_lookup_trace_20260414_054007.log, origin=service_readback_logs, cap=2026-04-14T05:40:07Z, lines=50):
+  2026-04-14T02:50:49Z level=INFO service=readback_collector event=export_started target_count=24 mode=point_in_time
+  2026-04-14T02:50:49Z level=DEBUG service=analytics_platform trace_id=rb-025049-001 event=analytics_profile_read_started resource_id=analytics_3234 lookup_key=null
+  2026-04-14T02:50:49Z level=INFO service=analytics_platform trace_id=rb-025049-001 event=analytics_profile_read_completed resource_id=analytics_3234 customer_reference=null email=null phone=null email_hash=null audience_cohort=returning_customer
+  2026-04-14T03:19:12Z level=DEBUG service=analytics_platform trace_id=rb-031912-002 event=analytics_profile_read_started resource_id=analytics_9918 lookup_key=reed.hannah@icloud.com
+  2026-04-14T03:19:12Z level=INFO service=analytics_platform trace_id=rb-031912-002 event=analytics_profile_read_completed resource_id=analytics_9918 customer_reference=null email=reed.hannah@icloud.com phone=null email_hash=null audience_cohort=returning_customer
+  2026-04-14T03:26:36Z level=DEBUG service=account_service trace_id=rb-032636-003 event=profile_lookup_started resource_id=account_2854 lookup_key=n.mensah16@gmail.com
+evidence_73 (evidence/logs/resource_lookup_trace_20260509_104353.log, origin=service_readback_logs, cap=2026-05-09T10:43:53Z, lines=68):
+  2026-05-09T07:46:43Z level=INFO service=readback_collector event=export_started target_count=33 mode=point_in_time
+  2026-05-09T07:46:43Z level=DEBUG service=security_service trace_id=rb-074643-001 event=audit_record_read_started resource_id=audit_record_4466 lookup_key=user_322
+  2026-05-09T07:46:43Z level=INFO service=security_service trace_id=rb-074643-001 event=audit_record_read_completed resource_id=audit_record_4466 rows=1 subject_reference=user_322 event_code=IDENTITY_CHANGE_RECORDED retention_until=2034-09-30T23:59:59Z
+  2026-05-09T07:47:14Z level=DEBUG service=integration_service trace_id=rb-074714-002 event=connector_config_read_started resource_id=data_flow_2468 lookup_key=user_324
+  2026-05-09T07:47:14Z level=INFO service=integration_service trace_id=rb-074714-002 event=connector_config_read_completed resource_id=data_flow_2468 enabled=false last_delivery_status=stopped connector_name=search_profile_indexer customer_email=null customer_reference=user_324
+  2026-05-09T07:49:25Z level=DEBUG service=support_platform trace_id=rb-074925-003 event=support_ticket_read_started resource_id=support_1403 lookup_key=user_329
+evidence_76 (evidence/logs/resource_lookup_trace_20260529_074313.log, origin=service_readback_logs, cap=2026-05-29T07:43:13Z, lines=48):
+  2026-05-29T04:54:21Z level=INFO service=readback_collector event=export_started target_count=23 mode=point_in_time
+  2026-05-29T04:54:21Z level=DEBUG service=account_service trace_id=rb-045421-001 event=profile_lookup_started resource_id=account_285 lookup_key=t.zulu0697@yahoo.com
+  2026-05-29T04:54:21Z level=INFO service=account_service trace_id=rb-045421-001 event=profile_lookup_completed resource_id=account_285 rows=1 http_status=200 customer_reference=null email=t.zulu0697@yahoo.com phone=null
+  2026-05-29T05:22:37Z level=DEBUG service=support_platform trace_id=rb-052237-002 event=support_ticket_read_started resource_id=support_7432 lookup_key=soojin-cho@proton.me
+  2026-05-29T05:22:37Z level=INFO service=support_platform trace_id=rb-052237-002 event=support_ticket_read_completed resource_id=support_7432 customer_reference=null requester_name=null requester_email=soojin-cho@proton.me requester_phone=null
+  2026-05-29T05:26:36Z level=DEBUG service=search_service trace_id=rb-052636-003 event=index_query_started resource_id=search_3144 lookup_key=sofia.lopez@gmail.com
+evidence_79 (evidence/logs/resource_lookup_trace_20260623_053726.log, origin=service_readback_logs, cap=2026-06-23T05:37:26Z, lines=60):
+  2026-06-23T02:45:15Z level=INFO service=readback_collector event=export_started target_count=29 mode=point_in_time
+  2026-06-23T02:45:15Z level=DEBUG service=analytics_platform trace_id=rb-024515-001 event=analytics_profile_read_started resource_id=analytics_1964 lookup_key=null
+  2026-06-23T02:45:15Z level=INFO service=analytics_platform trace_id=rb-024515-001 event=analytics_profile_read_completed resource_id=analytics_1964 customer_reference=null email=null phone=null email_hash=null audience_cohort=mobile_browser
+  2026-06-23T02:47:51Z level=DEBUG service=account_service trace_id=rb-024751-002 event=profile_lookup_started resource_id=account_2838 lookup_key=daniel-parker@proton.me
+  2026-06-23T02:47:51Z level=INFO service=account_service trace_id=rb-024751-002 event=profile_lookup_completed resource_id=account_2838 rows=0 http_status=404
+  2026-06-23T02:48:26Z level=DEBUG service=security_service trace_id=rb-024826-003 event=audit_record_read_started resource_id=audit_record_8350 lookup_key=user_231
+evidence_82 (evidence/logs/resource_lookup_trace_20260713_093359.log, origin=service_readback_logs, cap=2026-07-13T09:33:59Z, lines=54):
+  2026-07-13T06:48:43Z level=INFO service=readback_collector event=export_started target_count=26 mode=point_in_time
+  2026-07-13T06:48:43Z level=DEBUG service=account_service trace_id=rb-064843-001 event=profile_lookup_started resource_id=account_2933 lookup_key=j.girard1079@yahoo.com
+  2026-07-13T06:48:43Z level=INFO service=account_service trace_id=rb-064843-001 event=profile_lookup_completed resource_id=account_2933 rows=1 http_status=200 customer_reference=null email=j.girard1079@yahoo.com phone=null
+  2026-07-13T06:53:09Z level=DEBUG service=account_service trace_id=rb-065309-002 event=profile_lookup_started resource_id=account_4320 lookup_key=a.sato96@gmail.com
+  2026-07-13T06:53:09Z level=INFO service=account_service trace_id=rb-065309-002 event=profile_lookup_completed resource_id=account_4320 rows=0 http_status=404
+  2026-07-13T07:05:05Z level=DEBUG service=security_service trace_id=rb-070505-003 event=audit_record_read_started resource_id=audit_record_1524 lookup_key=user_193
+evidence_85 (evidence/logs/resource_lookup_trace_20260728_054417.log, origin=service_readback_logs, cap=2026-07-28T05:44:17Z, lines=46):
+  2026-07-28T02:49:32Z level=INFO service=readback_collector event=export_started target_count=22 mode=point_in_time
+  2026-07-28T02:49:32Z level=DEBUG service=search_service trace_id=rb-024932-001 event=index_query_started resource_id=search_5261 lookup_key=OBI.ADAEZE@ICLOUD.COM
+  2026-07-28T02:49:32Z level=INFO service=search_service trace_id=rb-024932-001 event=index_query_completed resource_id=search_5261 result=hit total_hits=1 index=customer_directory_v3 email=OBI.ADAEZE@ICLOUD.COM customer_reference=null
+  2026-07-28T02:51:36Z level=DEBUG service=support_platform trace_id=rb-025136-002 event=support_ticket_read_started resource_id=support_2322 lookup_key=menon.arjun@gmail.com
+  2026-07-28T02:51:36Z level=INFO service=support_platform trace_id=rb-025136-002 event=support_ticket_read_completed resource_id=support_2322 customer_reference=null requester_name=null requester_email=menon.arjun@gmail.com requester_phone=null
+  2026-07-28T02:52:12Z level=DEBUG service=account_service trace_id=rb-025212-003 event=profile_lookup_started resource_id=account_3064 lookup_key=n.farouk26@yahoo.com
+evidence_88 (evidence/logs/resource_lookup_trace_20260822_103910.log, origin=service_readback_logs, cap=2026-08-22T10:39:10Z, lines=46):
+  2026-08-22T07:45:59Z level=INFO service=readback_collector event=export_started target_count=22 mode=point_in_time
+  2026-08-22T07:45:59Z level=DEBUG service=integration_service trace_id=rb-074559-001 event=connector_config_read_started resource_id=data_flow_3199 lookup_key=hannah.sullivan@gmail.com
+  2026-08-22T07:45:59Z level=INFO service=integration_service trace_id=rb-074559-001 event=connector_config_read_completed resource_id=data_flow_3199 enabled=true last_delivery_status=delivered connector_name=search_profile_indexer customer_email=hannah.sullivan@gmail.com customer_reference=null
+  2026-08-22T07:46:55Z level=DEBUG service=search_service trace_id=rb-074655-002 event=index_query_started resource_id=search_1752 lookup_key=hannah.sullivan@gmail.com
+  2026-08-22T07:46:55Z level=INFO service=search_service trace_id=rb-074655-002 event=index_query_completed resource_id=search_1752 result=hit total_hits=1 index=customer_directory_v3 email=hannah.sullivan@gmail.com customer_reference=null
+  2026-08-22T08:03:57Z level=DEBUG service=search_service trace_id=rb-080357-003 event=index_query_started resource_id=search_5696 lookup_key=oadeyemi1657@gmail.com
+evidence_91 (evidence/logs/resource_lookup_trace_20260911_074253.log, origin=service_readback_logs, cap=2026-09-11T07:42:53Z, lines=62):
+  2026-09-11T04:47:51Z level=INFO service=readback_collector event=export_started target_count=30 mode=point_in_time
+  2026-09-11T04:47:51Z level=DEBUG service=security_service trace_id=rb-044751-001 event=audit_record_read_started resource_id=audit_record_9645 lookup_key=user_79
+  2026-09-11T04:47:51Z level=INFO service=security_service trace_id=rb-044751-001 event=audit_record_read_completed resource_id=audit_record_9645 rows=1 subject_reference=user_79 event_code=SUBJECT_REQUEST_AUDITED retention_until=2033-12-31T23:59:59Z
+  2026-09-11T04:50:55Z level=DEBUG service=analytics_platform trace_id=rb-045055-002 event=analytics_profile_read_started resource_id=analytics_5059 lookup_key=null
+  2026-09-11T04:50:55Z level=INFO service=analytics_platform trace_id=rb-045055-002 event=analytics_profile_read_completed resource_id=analytics_5059 customer_reference=null email=null phone=null email_hash=null audience_cohort=home_lifestyle
+  2026-09-11T05:04:31Z level=DEBUG service=analytics_platform trace_id=rb-050431-003 event=analytics_profile_read_started resource_id=analytics_2176 lookup_key=null
+evidence_94 (evidence/logs/resource_lookup_trace_20260926_103856.log, origin=service_readback_logs, cap=2026-09-26T10:38:56Z, lines=58):
+  2026-09-26T07:49:50Z level=INFO service=readback_collector event=export_started target_count=28 mode=point_in_time
+  2026-09-26T07:49:50Z level=DEBUG service=account_service trace_id=rb-074950-001 event=profile_lookup_started resource_id=account_2064 lookup_key=charlotte.wright@outlook.com
+  2026-09-26T07:49:50Z level=INFO service=account_service trace_id=rb-074950-001 event=profile_lookup_completed resource_id=account_2064 rows=0 http_status=404
+  2026-09-26T07:51:26Z level=DEBUG service=integration_service trace_id=rb-075126-002 event=connector_config_read_started resource_id=data_flow_4713 lookup_key=user_49
+  2026-09-26T07:51:26Z level=INFO service=integration_service trace_id=rb-075126-002 event=connector_config_read_completed resource_id=data_flow_4713 enabled=false last_delivery_status=stopped connector_name=support_profile_sync customer_email=null customer_reference=user_49
+  2026-09-26T07:54:41Z level=DEBUG service=backup_service trace_id=rb-075441-003 event=restore_policy_read_started resource_id=backup_7809 lookup_key=user_49
+
+=== 4. ALL 11 EXTRACTED IMAGES JSON ===
+account_admin_console_20260926.json: {
+  "system_id": "Northstar Shop - Customer Operations (Production workspace, build 2026.10.4)",
+  "captured_at": "24 Sep 2026 09:14 JST",
+  "records": [
+    {
+      "resource_id": "account_5762",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": "+81 90 7610 2507",
+      "status": "Silver",
+      "details": {
+        "type": "customer_profile",
+        "loyalty_tier": "Silver",
+        "member_since": "12 Jan 2024",
+        "signup_channel": "mobile_app",
+        "market": "JP",
+        "preferred_language": "Japanese",
+        "last_contact": "24 Sep 2026 09:14 JST",
+        "default_address": "2-18-4 Kichijoji, Musashino, Tokyo 180-0004",
+        "associated_support_ticket_id": "CS-8538",
+        "associated_support_record_id": "support_9538"
+      }
+    },
+    {
+      "resource_id": "ORD-20265762",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": "+81 90 7610 2507",
+      "status": "Delivered",
+      "details": {
+        "type": "order",
+        "order_date": "12 Sep 2026",
+        "item": "Ceramic coffee set",
+        "quantity": 1,
+        "total": "JPY 8,900",
+        "delivery_date": "18 Sep 2026"
+      }
+    },
+    {
+      "resource_id": "ORD-20265518",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": "+81 90 7610 2507",
+      "status": "Returned",
+      "details": {
+        "type": "order",
+        "order_date": "28 Aug 2026",
+        "item": "Travel backpack",
+        "quantity": 1,
+        "total": "JPY 12,400",
+        "return_date": "03 Sep 2026"
+      }
+    },
+    {
+      "resource_id": "CS-8538",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "activity",
+        "timestamp": "24 Sep 2026",
+        "description": "Customer replied to CS-8538",
+        "activity_source": "customer"
+      }
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "activity",
+        "timestamp": "22 Sep 2026",
+        "description": "Support agent responded",
+        "activity_source": "support_agent"
+      }
+    },
+    {
+      "resource_id": "ORD-20265762",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": "delivered",
+      "details": {
+        "type": "activity",
+        "timestamp": "18 Sep 2026",
+        "description": "Order ORD-20265762 delivered",
+        "activity_type": "delivery_status_update"
+      }
+    },
+    {
+      "resource_id": "ORD-20265518",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": "returned",
+      "details": {
+        "type": "activity",
+        "timestamp": "03 Sep 2026",
+        "description": "Order ORD-20265518 returned",
+        "activity_type": "return_status_update"
+      }
+    },
+    {
+      "resource_id": "support_9538",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": "created",
+      "details": {
+        "type": "activity",
+        "timestamp": "28 Aug 2026",
+        "description": "support_9538 created",
+        "activity_type": "support_record_creation"
+      }
+    }
+  ]
+}
+analytics_profile_view_20260713.json: {
+  "system_id": "Northstar Shop - Pulse Analytics",
+  "records": [
+    {
+      "resource_id": null,
+      "user_id": "user_20, analytics_7438",
+      "email": "darwish.omar@icloud.com",
+      "name": "Omar Darwish",
+      "phone": null,
+      "status": null,
+      "details": {
+        "timeframe_selected": "Last 90 days",
+        "summary_metrics": {
+          "sessions": "12",
+          "products_viewed": "19",
+          "completed_orders": "2",
+          "revenue": "USD 167.42",
+          "mobile_desktop_split": "67% / 33%",
+          "acquisition_channel": "Organic search"
+        },
+        "profile_attributes": {
+          "market": "AE",
+          "audience": "Returning shopper",
+          "interest": "Coffee & dining",
+          "last_activity": "13 Jul 2026 14:22 UTC",
+          "first_seen": "21 Apr 2026 09:14 UTC"
+        },
+        "event_timeline": [
+          {
+            "sequence": "1",
+            "time": "14:22",
+            "event": "Order completed",
+            "product_detail": "Ceramic coffee set",
+            "value": "USD 84.21",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "2",
+            "time": "14:20",
+            "event": "Checkout started",
+            "product_detail": "2 items",
+            "value": "USD 84.21",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "3",
+            "time": "14:17",
+            "event": "Product viewed",
+            "product_detail": "Ceramic coffee set",
+            "value": "—",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "4",
+            "time": "14:16",
+            "event": "Added to cart",
+            "product_detail": "Ceramic coffee set",
+            "value": "USD 42.00",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "5",
+            "time": "14:12",
+            "event": "Product viewed",
+            "product_detail": "Stoneware mug",
+            "value": "USD 18.00",
+            "device": "Desktop"
+          }
+        ],
+        "activity_log": [
+          {
+            "date": "13 Jul",
+            "description": "6 events in active session"
+          },
+          {
+            "date": "08 Jul",
+            "description": "Order completed - USD 83.21"
+          },
+          {
+            "date": "30 Jun",
+            "description": "Product search - coffee set"
+          },
+          {
+            "date": "22 Jun",
+            "description": "Campaign opened"
+          }
+        ],
+        "system_information": {
+          "workspace": "Production workspace",
+          "build": "2026.10.4"
+        }
+      }
+    }
+  ]
+}
+backup_restore_console_20260429.json: {
+  "system_id": "Northstar Shop Vault Recovery Manager",
+  "captured_at": "2026-04-26T02:00:00Z",
+  "records": [
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": "Service health for Customer-platform archives. Northstar Production - weekly snapshots."
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Storage growth: +12.4%"
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Restore success: 99.6%"
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Stored: 1.35 PB"
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Archives table metadata: Updated moments ago - 4 records"
+    },
+    {
+      "resource_id": "backup_9291",
+      "user_id": null,
+      "email": "bluepeakco@outlook.com",
+      "name": null,
+      "phone": null,
+      "status": "Archive",
+      "details": "Account: bluepeakco@outlook.com, Region: ap-southeast-1, Created: 26 Apr 02:00, Size: 102.3 GB, Encryption: AES-256, Tier: Archive"
+    },
+    {
+      "resource_id": "backup_9288",
+      "user_id": null,
+      "email": "miller.logistics@company.com",
+      "name": null,
+      "phone": null,
+      "status": "Archive",
+      "details": "Account: miller.logistics@company.com, Region: us-west-2, Created: 26 Apr 02:00, Size: 67.1 GB, Encryption: AES-256, Tier: Archive"
+    },
+    {
+      "resource_id": "backup_9287",
+      "user_id": null,
+      "email": "areed1433@gmail.com",
+      "name": null,
+      "phone": null,
+      "status": "Verified",
+      "details": "Account: areed1433@gmail.com, Path: s3://northstar-backups/customer-platform/weekly/segment-42-20260426.tar.zst, Region: eu-west-1, Created: 26 Apr 2026 02:00 UTC, Size: 84.7 GB (from table), Encryption: AES-256, Tier: Archive (from table), Checksum: Verified, Last drill: 29 Mar 2026, Retention end: 26 Jul 2026. Activity: 25 Apr: backup_9286 restored - Completed; 24 Apr: backup_9281 restored - Completed; 22 Apr: checksum verification - Completed."
+    },
+    {
+      "resource_id": "backup_9286",
+      "user_id": null,
+      "email": "summit-retail@company.com",
+      "name": null,
+      "phone": null,
+      "status": "Archive",
+      "details": "Account: summit-retail@company.com, Region: us-east-1, Created: 26 Apr 02:00, Size: 91.4 GB, Encryption: AES-256, Tier: Archive"
+    }
+  ]
+}
+connector_management_console_20260807.json: {
+  "system_id": "Northstar Shop / BridgeOps",
+  "captured_at": "07 Aug 2026 08:00 UTC",
+  "environment_details": {
+    "environment": "PRODUCTION",
+    "region": "eu-west",
+    "app_name": "BridgeOps",
+    "production_workspace_status": "Production workspace",
+    "build_version": "2026.10.4"
+  },
+  "dashboard_summary": {
+    "total_connectors": 12,
+    "healthy_connectors": 12,
+    "events_per_hour_total": 4113,
+    "delivery_p95": "1.8 s",
+    "backlog": 18,
+    "destination_health_overall": "Healthy"
+  },
+  "records": [
+    {
+      "resource_id": "data_flow_1121",
+      "user_id": null,
+      "email": "jain.aditi@gmail.com",
+      "name": "Data Platform",
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "customer_analytics_warehouse",
+        "selector": "jain.aditi@gmail.com",
+        "mode": "Continuous",
+        "events_per_hour": 1284,
+        "last_contact": "07:59:42",
+        "owner": "Data Platform",
+        "sync_mode": "Continuous sync",
+        "last_response": "200 OK - 1.8 s",
+        "activity_log": [
+          {
+            "timestamp": "07:59:42",
+            "description": "124 events delivered"
+          },
+          {
+            "timestamp": "07:58:10",
+            "description": "checkpoint committed"
+          },
+          {
+            "timestamp": "07:56:44",
+            "description": "18 events retried"
+          },
+          {
+            "timestamp": "07:55:02",
+            "description": "destination acknowledged batch"
+          }
+        ]
+      }
+    },
+    {
+      "resource_id": "data_flow_9846",
+      "user_id": null,
+      "email": "lucia-torres@gmail.com",
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "customer_analytics_warehouse",
+        "selector": "lucia-torres@gmail.com",
+        "mode": "Continuous",
+        "events_per_hour": 842,
+        "last_contact": "07:59:36"
+      }
+    },
+    {
+      "resource_id": "Order notifications",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "notification_service",
+        "selector": "order events",
+        "mode": "Continuous",
+        "events_per_hour": 650,
+        "last_contact": "07:59:28"
+      }
+    },
+    {
+      "resource_id": "Delivery tracking",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "logistics_warehouse",
+        "selector": "shipment events",
+        "mode": "Continuous",
+        "events_per_hour": 420,
+        "last_contact": "07:59:13"
+      }
+    }
+  ]
+}
+customer_export_console_20260618.json: {
+  "system_id": "Northstar Shop Customer Download Center Production workspace build 2026.10.4",
+  "captured_at": "20 Jun 2026 14:18 UTC",
+  "records": [
+    {
+      "resource_id": "export_1261",
+      "user_id": null,
+      "email": "marcus.lee@northstar.shop",
+      "name": "Marcus Lee",
+      "phone": null,
+      "status": "Collecting",
+      "details": {
+        "filename": "customer_export_1261.zip",
+        "created": "20 Jun 2026 14:18 UTC"
+      }
+    },
+    {
+      "resource_id": "export_1260",
+      "user_id": null,
+      "email": "ingrid.dahl@outlook.com",
+      "name": "Ingrid Dahl",
+      "phone": null,
+      "status": "Ready",
+      "details": {
+        "filename": "customer_export_1260.zip",
+        "created": "18 Jun 2026 06:42 UTC",
+        "expires": "25 Jun 2026 06:42 UTC",
+        "size": "18.4 MB",
+        "checksum": "SHA-256 - 41ca09...",
+        "download_count": 0,
+        "included": "Profile - Orders - Saved addresses",
+        "activity_log": [
+          {
+            "time": "06:46",
+            "event": "Ready for download"
+          },
+          {
+            "time": "06:45",
+            "event": "Package created"
+          },
+          {
+            "time": "06:43",
+            "event": "Collecting customer records"
+          },
+          {
+            "time": "06:42",
+            "event": "Export requested"
+          }
+        ]
+      }
+    },
+    {
+      "resource_id": "export_1259",
+      "user_id": null,
+      "email": "sara.kim@northstar.shop",
+      "name": "Sara Kim",
+      "phone": null,
+      "status": "Packaging",
+      "details": {
+        "filename": "customer_export_1259.zip",
+        "created": "17 Jun 2026 11:03 UTC"
+      }
+    },
+    {
+      "resource_id": "export_1258",
+      "user_id": null,
+      "email": "daniel.park@northstar.shop",
+      "name": "Daniel Park",
+      "phone": null,
+      "status": "Ready",
+      "details": {
+        "filename": "customer_export_1258.zip",
+        "created": "16 Jun 2026 09:27 UTC"
+      }
+    }
+  ]
+}
+deleted_account_reference_20260310.json: {
+  "system_id": "Northstar Shop Customer Reference Registry",
+  "captured_at": "10 Mar 2026 07:18 UTC",
+  "records": [
+    {
+      "resource_id": "user_17",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Customer key",
+      "phone": null,
+      "status": "Retained reference",
+      "details": {
+        "context": "Customer Reference Details",
+        "type": "Customer key",
+        "created_at": "11 Jan 2024 08:42 UTC",
+        "most_recent_update": "10 Mar 2026 07:18 UTC",
+        "owner_team": "Account Platform",
+        "location": "eu-west",
+        "environment": "Production",
+        "build": "2026.10.4",
+        "header_path": "Northstar Shop / Customer Reference Registry / Customer references"
+      }
+    },
+    {
+      "resource_id": "ORD-20263245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Orders Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Orders",
+        "relationship": "Linked to customer",
+        "created_at": "11 Jan 2024 08:45"
+      }
+    },
+    {
+      "resource_id": "CS-3245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Support",
+        "relationship": "Linked to customer",
+        "created_at": "14 Feb 2024 12:16"
+      }
+    },
+    {
+      "resource_id": "CS-3378",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Support",
+        "relationship": "Linked to customer",
+        "created_at": "03 Jun 2024 09:27"
+      }
+    },
+    {
+      "resource_id": "FIN-7742",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Finance Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Finance",
+        "relationship": "Linked to customer",
+        "created_at": "22 Aug 2024 15:03"
+      }
+    },
+    {
+      "resource_id": "user_17",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Reference created event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Reference created",
+        "timestamp": "11 Jan 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "ORD-20263245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Order link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Order link added",
+        "timestamp": "11 Jan 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "CS-3245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Support link added",
+        "timestamp": "14 Feb 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "CS-3378",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Support link added",
+        "timestamp": "03 Jun 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "FIN-7742",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Finance link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Finance link added",
+        "timestamp": "22 Aug 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "user_17",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Metadata reviewed event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Metadata reviewed",
+        "timestamp": "10 Mar 2026",
+        "source_section": "History & Activity"
+      }
+    }
+  ]
+}
+marketing_profile_console.json: {
+  "system_id": "Northstar Shop",
+  "captured_at": "2026-09-15T23:40:00Z",
+  "records": [
+    {
+      "resource_id": "marketing_001",
+      "user_id": "marketing_001",
+      "email": "sj.park@naver.com",
+      "name": "Soo-jin Park",
+      "phone": "+82 10-5837-9451",
+      "status": "Live",
+      "details": {
+        "profile_attributes_summary": {
+          "market": "South Korea",
+          "language": "Korean",
+          "email_opt_in": "Yes",
+          "sms_opt_in": "No",
+          "last_refreshed": "15 Sep 2026 23:40 UTC"
+        },
+        "profile_activity_log": [
+          {
+            "time": "23:40",
+            "activity": "Product-category update",
+            "detail": "Desk accessories · Drinkware"
+          },
+          {
+            "time": "23:38",
+            "activity": "Campaign eligibility check",
+            "detail": "Autumn offers · Eligible"
+          },
+          {
+            "time": "23:35",
+            "activity": "Profile refresh",
+            "detail": "Live profile fields updated"
+          },
+          {
+            "time": "23:32",
+            "activity": "Audience evaluation",
+            "detail": "Returning customers — East Asia"
+          }
+        ],
+        "audience_membership_details": {
+          "audience": "Returning customers — East Asia",
+          "segments": "Repeat customer · Home & lifestyle · Mobile shopper",
+          "preferred_categories": "Desk accessories · Drinkware",
+          "last_campaign": "Autumn offers",
+          "open_rate": "32.4%",
+          "click_rate": "6.8%"
+        },
+        "recent_activity_timeline": [
+          {
+            "event": "Autumn offers",
+            "description": "32.4% open rate"
+          },
+          {
+            "event": "Home & Lifestyle Picks",
+            "description": "28.7% open rate"
+          },
+          {
+            "event": "Profile refreshed from live data",
+            "description": "Recorded"
+          }
+        ],
+        "application_metadata": {
+          "module": "Audience Operations",
+          "breadcrumb": "Northstar Shop / Audience Operations / Audience Operations",
+          "environment": "Production",
+          "user_initials_in_navigation": "AO",
+          "workspace_info": "Audience Operations Production workspace",
+          "build_version": "2026.10.4"
+        }
+      }
+    }
+  ]
+}
+object_storage_browser_20260213.json: {
+  "system_id": "Nimbus Object Storage",
+  "captured_at": "13 Feb 2026 08:00 UTC",
+  "records": [
+    {
+      "resource_id": "delivery_confirmation_19.pdf",
+      "user_id": "support-service",
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "684 KB",
+        "modified_utc": "12 Feb 18:42",
+        "storage_class": "Standard",
+        "version": "v3",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02",
+        "content_type": "application/pdf",
+        "encryption": "AES-256",
+        "checksum": "e71b6d...",
+        "modified_full_timestamp": "12 Feb 2026 18:42 UTC",
+        "activity": [
+          {
+            "version": "v3",
+            "timestamp": "12 Feb 18:42",
+            "event": "metadata update"
+          },
+          {
+            "version": "v2",
+            "timestamp": "12 Feb 18:39",
+            "event": "upload complete"
+          },
+          {
+            "version": "v1",
+            "timestamp": "12 Feb 18:38",
+            "event": "object created"
+          }
+        ]
+      }
+    },
+    {
+      "resource_id": "delivery_confirmation_20.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "712 KB",
+        "modified_utc": "11 Feb 14:17",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "return_label_4821.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "203 KB",
+        "modified_utc": "10 Feb 09:33",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "return_label_4876.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "198 KB",
+        "modified_utc": "11 Feb 16:05",
+        "storage_class": "Standard",
+        "version": "v2",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "invoice_NS-10493.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "318 KB",
+        "modified_utc": "10 Feb 11:21",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "parcel_damage_7713.jpg",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "2.4 MB",
+        "modified_utc": "12 Feb 10:08",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "customer_export_2026-02-10.zip",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "128 MB",
+        "modified_utc": "10 Feb 23:14",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "customer_export_2026-02-12.zip",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "131 MB",
+        "modified_utc": "12 Feb 21:56",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    }
+  ]
+}
+search_index_inspector_20260901.json: {
+  "system_id": "Northstar Shop Search Console",
+  "captured_at": "2026-09-01T06:00:14Z",
+  "search_details": {
+    "query": "email:g.silva76@gmail.com",
+    "hits_total": 2,
+    "executed_timestamp": "01 Sep 2026 06:00:14 UTC",
+    "latency_ms": 184,
+    "index": "customer_directory_v3",
+    "environment": "prod-eu",
+    "shard_total_ms": 184,
+    "updated_info": "Updated moments ago - 2 records"
+  },
+  "build_version": "2026.10.4",
+  "records": [
+    {
+      "resource_id": "search_428",
+      "user_id": "user_13",
+      "email": "g.silva76@gmail.com",
+      "name": "Gabriel Silva",
+      "phone": null,
+      "status": null,
+      "details": {
+        "score": 9.84,
+        "last_indexed_utc": "05:58:21 UTC",
+        "raw_document": {
+          "_index": "customer_directory_v3",
+          "_id": "search_428",
+          "display_name": "Gabriel Silva",
+          "email": "g.silva76@gmail.com",
+          "customer_reference": "user_13",
+          "indexed_at": "2026-09-01T05:58:21Z"
+        }
+      }
+    },
+    {
+      "resource_id": "search_1874",
+      "user_id": null,
+      "email": "g.silva76.jr@gmail.com",
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "score": 4.12,
+        "last_indexed_utc": "05:55:03 UTC"
+      }
+    }
+  ],
+  "activity_logs": [
+    {
+      "timestamp": "06:00:14",
+      "event": "email:g.silva76@gmail.com - 2 hits"
+    },
+    {
+      "timestamp": "05:42:03",
+      "event": "customer_reference:user_9842 - 1 hit"
+    },
+    {
+      "timestamp": "05:31:18",
+      "event": "display_name:\"Aditi Jain\" - 1 hit"
+    }
+  ]
+}
+security_audit_explorer_20260905.json: {
+  "system_id": "Northstar Shop - Sentinel",
+  "captured_at": "2026-08-26T12:00:00Z",
+  "records": [
+    {
+      "resource_id": "audit_record_003",
+      "user_id": "user_03",
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "25 Aug 04:03",
+        "event_name": "Account closure recorded",
+        "category": "Account lifecycle",
+        "actor": "Automated workflow",
+        "integrity_status": "Valid",
+        "partition": "2026-Q3",
+        "event_type": "account_closure_recorded",
+        "recorded_at": "2026-08-25T04:03:00Z",
+        "fingerprint": "8f0c...31ad",
+        "signature": "Valid",
+        "journal": "2026-Q3",
+        "activity_log": [
+          "25 Aug: Account closure recorded",
+          "25 Aug: Session revoked",
+          "24 Aug: Recovery challenge completed",
+          "22 Aug: Email change confirmed"
+        ]
+      }
+    },
+    {
+      "resource_id": "audit_record_002",
+      "user_id": "user_03",
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "25 Aug 03:21",
+        "event_name": "Session revoked",
+        "category": "Session management",
+        "actor": "Security system",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_001",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "24 Aug 16:14",
+        "event_name": "Recovery challenge completed",
+        "category": "Authentication",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_006",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "22 Aug 11:27",
+        "event_name": "Email change confirmed",
+        "category": "Profile update",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_005",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "20 Aug 09:42",
+        "event_name": "Login from new device",
+        "category": "Authentication",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_004",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "18 Aug 14:05",
+        "event_name": "Password changed",
+        "category": "Authentication",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    }
+  ]
+}
+support_ticket_console_20260524.json: {
+  "system_id": "Helpline Console",
+  "captured_at": null,
+  "records": [
+    {
+      "resource_id": "CS-5034",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": "Normal priority",
+      "details": {
+        "type": "Support Ticket",
+        "ticket_code": "support_1034",
+        "title": "Where is my delivery?",
+        "sla_remaining": "01:42",
+        "assigned_agent_name": "Maya Chen",
+        "tags": "Delivery · Tracking · Order update"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": "In transit",
+      "details": {
+        "type": "Order",
+        "product": "Running shoes",
+        "carrier": "SwiftShip",
+        "tracking_number": "SWF-884103",
+        "expected_delivery_date": "26 May 2026",
+        "assigned_agent_name": "Maya Chen"
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_1",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:12",
+        "sender": "Kofi Agyeman",
+        "message": "Could you let me know where my order is and when it is expected to arrive?"
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_2",
+      "user_id": null,
+      "email": null,
+      "name": "Northstar Bot",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:13",
+        "sender": "Northstar Bot",
+        "message": "We received your message and are checking the order details."
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_3",
+      "user_id": null,
+      "email": null,
+      "name": "Maya Chen",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:28",
+        "sender": "Maya Chen",
+        "message": "The parcel reached the regional hub and is on track for delivery on 26 May."
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_4",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:35",
+        "sender": "Kofi Agyeman",
+        "message": "Thanks for the update."
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_1",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Order confirmed",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "22 May"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_2",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Dispatched",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "23 May"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_3",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Reached regional hub",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "24 May 07:46"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_4",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "In transit",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "24 May 08:15"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_5",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Delivery expected",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "26 May"
+      }
+    }
+  ]
+}
+
+=== 5. ALL UNIQUE NON-ASCII OR POTENTIAL NON-DELETION REQUEST TEXTS ===
+Non-standard unique texts: 15
+  [14x] cases=[('case_54', 'PARTIALLY_COMPLETE'), ('case_93', 'PARTIALLY_COMPLETE'), ('case_132', 'PARTIALLY_COMPLETE'), ('case_171', 'NOT_STARTED'), ('case_210', 'COMPLETE')] text=Solicito a exclusão permanente da conta associada a este e-mail. Verifiquem os identificadores atuais e anteriores conforme o processo de privacidade. Por favor, confirmem o resultado quando a análise terminar.
+  [12x] cases=[('case_66', 'NOT_STARTED'), ('case_105', 'COMPLETE'), ('case_144', 'COMPLETE'), ('case_183', 'NOT_STARTED'), ('case_222', 'COMPLETE')] text=이 이메일 주소에 연결된 계정의 영구 삭제를 요청합니다. 개인정보 처리 절차에 따라 현재 및 이전 식별자를 검토해 주세요. 검토가 완료되면 결과를 확인해 주세요.
+  [12x] cases=[('case_69', 'COMPLETE'), ('case_108', 'PARTIALLY_COMPLETE'), ('case_147', 'PARTIALLY_COMPLETE'), ('case_186', 'NOT_STARTED'), ('case_225', 'COMPLETE')] text=Solicito la eliminación permanente de la cuenta asociada a este correo. Revisen los identificadores actuales y anteriores según su política de privacidad. Por favor, confirmen el resultado cuando termine la revisión.
+  [12x] cases=[('case_78', 'COMPLETE'), ('case_117', 'PARTIALLY_COMPLETE'), ('case_156', 'COMPLETE'), ('case_195', 'COMPLETE'), ('case_234', 'COMPLETE')] text=このメールアドレスに関連するアカウントの完全な削除を依頼します。 プライバシー手続きに従い、現在および過去の識別情報を確認してください。 確認が完了したら結果をお知らせください。
+  [12x] cases=[('case_84', 'NOT_STARTED'), ('case_123', 'COMPLETE'), ('case_162', 'NOT_STARTED'), ('case_201', 'PARTIALLY_COMPLETE'), ('case_240', 'COMPLETE')] text=Je demande la suppression définitive du compte associé à cette adresse e-mail. Veuillez examiner les identifiants actuels et antérieurs conformément à votre procédure de confidentialité. Merci de confirmer le résultat une fois la vérification terminée.
+  [1x] cases=[('case_533', 'NOT_STARTED')] text=The mobile number on my profile is out of date. Please replace it with the new one and leave the account active.
+  [1x] cases=[('case_534', 'NOT_STARTED')] text=Please stop the promotional emails. I still need the account and my order history, so I am not asking for deletion.
+  [1x] cases=[('case_535', 'NOT_STARTED')] text=I'd like to download my account information in a portable format. Please keep the account as it is.
+  [1x] cases=[('case_536', 'NOT_STARTED')] text=I can't access my profile and need help resetting the login. Do not close the account.
+  [1x] cases=[('case_537', 'NOT_STARTED')] text=My surname is misspelled on the account. Can you correct it without removing any of my records?
+  [1x] cases=[('case_538', 'NOT_STARTED')] text=Please remove me from marketing lists only. I still want receipts and service messages for this account.
+  [1x] cases=[('case_539', 'NOT_STARTED')] text=Can you tell me what personal information you hold about me? This is an information request, not a request to erase it.
+  [1x] cases=[('case_540', 'NOT_STARTED')] text=I need a copy of last year's invoices for my records. Please leave my profile and purchase history in place.
+  [1x] cases=[('case_541', 'NOT_STARTED')] text=Please change the email address used for this account. I want to continue using the service.
+  [1x] cases=[('case_542', 'NOT_STARTED')] text=Could you send me a copy of the information held on my account? I still use it, so please don't delete or change anything.
