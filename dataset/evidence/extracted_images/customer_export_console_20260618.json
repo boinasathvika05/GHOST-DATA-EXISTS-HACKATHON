@@ -1,0 +1,77 @@
+{
+  "system_id": "Northstar Shop Customer Download Center Production workspace build 2026.10.4",
+  "captured_at": "20 Jun 2026 14:18 UTC",
+  "records": [
+    {
+      "resource_id": "export_1261",
+      "user_id": null,
+      "email": "marcus.lee@northstar.shop",
+      "name": "Marcus Lee",
+      "phone": null,
+      "status": "Collecting",
+      "details": {
+        "filename": "customer_export_1261.zip",
+        "created": "20 Jun 2026 14:18 UTC"
+      }
+    },
+    {
+      "resource_id": "export_1260",
+      "user_id": null,
+      "email": "ingrid.dahl@outlook.com",
+      "name": "Ingrid Dahl",
+      "phone": null,
+      "status": "Ready",
+      "details": {
+        "filename": "customer_export_1260.zip",
+        "created": "18 Jun 2026 06:42 UTC",
+        "expires": "25 Jun 2026 06:42 UTC",
+        "size": "18.4 MB",
+        "checksum": "SHA-256 - 41ca09...",
+        "download_count": 0,
+        "included": "Profile - Orders - Saved addresses",
+        "activity_log": [
+          {
+            "time": "06:46",
+            "event": "Ready for download"
+          },
+          {
+            "time": "06:45",
+            "event": "Package created"
+          },
+          {
+            "time": "06:43",
+            "event": "Collecting customer records"
+          },
+          {
+            "time": "06:42",
+            "event": "Export requested"
+          }
+        ]
+      }
+    },
+    {
+      "resource_id": "export_1259",
+      "user_id": null,
+      "email": "sara.kim@northstar.shop",
+      "name": "Sara Kim",
+      "phone": null,
+      "status": "Packaging",
+      "details": {
+        "filename": "customer_export_1259.zip",
+        "created": "17 Jun 2026 11:03 UTC"
+      }
+    },
+    {
+      "resource_id": "export_1258",
+      "user_id": null,
+      "email": "daniel.park@northstar.shop",
+      "name": "Daniel Park",
+      "phone": null,
+      "status": "Ready",
+      "details": {
+        "filename": "customer_export_1258.zip",
+        "created": "16 Jun 2026 09:27 UTC"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "system_id": "Northstar Shop Search Console",
+  "captured_at": "2026-09-01T06:00:14Z",
+  "search_details": {
+    "query": "email:g.silva76@gmail.com",
+    "hits_total": 2,
+    "executed_timestamp": "01 Sep 2026 06:00:14 UTC",
+    "latency_ms": 184,
+    "index": "customer_directory_v3",
+    "environment": "prod-eu",
+    "shard_total_ms": 184,
+    "updated_info": "Updated moments ago - 2 records"
+  },
+  "build_version": "2026.10.4",
+  "records": [
+    {
+      "resource_id": "search_428",
+      "user_id": "user_13",
+      "email": "g.silva76@gmail.com",
+      "name": "Gabriel Silva",
+      "phone": null,
+      "status": null,
+      "details": {
+        "score": 9.84,
+        "last_indexed_utc": "05:58:21 UTC",
+        "raw_document": {
+          "_index": "customer_directory_v3",
+          "_id": "search_428",
+          "display_name": "Gabriel Silva",
+          "email": "g.silva76@gmail.com",
+          "customer_reference": "user_13",
+          "indexed_at": "2026-09-01T05:58:21Z"
+        }
+      }
+    },
+    {
+      "resource_id": "search_1874",
+      "user_id": null,
+      "email": "g.silva76.jr@gmail.com",
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "score": 4.12,
+        "last_indexed_utc": "05:55:03 UTC"
+      }
+    }
+  ],
+  "activity_logs": [
+    {
+      "timestamp": "06:00:14",
+      "event": "email:g.silva76@gmail.com - 2 hits"
+    },
+    {
+      "timestamp": "05:42:03",
+      "event": "customer_reference:user_9842 - 1 hit"
+    },
+    {
+      "timestamp": "05:31:18",
+      "event": "display_name:\"Aditi Jain\" - 1 hit"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "system_id": "Northstar Shop / BridgeOps",
+  "captured_at": "07 Aug 2026 08:00 UTC",
+  "environment_details": {
+    "environment": "PRODUCTION",
+    "region": "eu-west",
+    "app_name": "BridgeOps",
+    "production_workspace_status": "Production workspace",
+    "build_version": "2026.10.4"
+  },
+  "dashboard_summary": {
+    "total_connectors": 12,
+    "healthy_connectors": 12,
+    "events_per_hour_total": 4113,
+    "delivery_p95": "1.8 s",
+    "backlog": 18,
+    "destination_health_overall": "Healthy"
+  },
+  "records": [
+    {
+      "resource_id": "data_flow_1121",
+      "user_id": null,
+      "email": "jain.aditi@gmail.com",
+      "name": "Data Platform",
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "customer_analytics_warehouse",
+        "selector": "jain.aditi@gmail.com",
+        "mode": "Continuous",
+        "events_per_hour": 1284,
+        "last_contact": "07:59:42",
+        "owner": "Data Platform",
+        "sync_mode": "Continuous sync",
+        "last_response": "200 OK - 1.8 s",
+        "activity_log": [
+          {
+            "timestamp": "07:59:42",
+            "description": "124 events delivered"
+          },
+          {
+            "timestamp": "07:58:10",
+            "description": "checkpoint committed"
+          },
+          {
+            "timestamp": "07:56:44",
+            "description": "18 events retried"
+          },
+          {
+            "timestamp": "07:55:02",
+            "description": "destination acknowledged batch"
+          }
+        ]
+      }
+    },
+    {
+      "resource_id": "data_flow_9846",
+      "user_id": null,
+      "email": "lucia-torres@gmail.com",
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "customer_analytics_warehouse",
+        "selector": "lucia-torres@gmail.com",
+        "mode": "Continuous",
+        "events_per_hour": 842,
+        "last_contact": "07:59:36"
+      }
+    },
+    {
+      "resource_id": "Order notifications",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "notification_service",
+        "selector": "order events",
+        "mode": "Continuous",
+        "events_per_hour": 650,
+        "last_contact": "07:59:28"
+      }
+    },
+    {
+      "resource_id": "Delivery tracking",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": {
+        "destination": "logistics_warehouse",
+        "selector": "shipment events",
+        "mode": "Continuous",
+        "events_per_hour": 420,
+        "last_contact": "07:59:13"
+      }
+    }
+  ]
+}

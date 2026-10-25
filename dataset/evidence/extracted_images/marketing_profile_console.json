@@ -1,0 +1,75 @@
+{
+  "system_id": "Northstar Shop",
+  "captured_at": "2026-09-15T23:40:00Z",
+  "records": [
+    {
+      "resource_id": "marketing_001",
+      "user_id": "marketing_001",
+      "email": "sj.park@naver.com",
+      "name": "Soo-jin Park",
+      "phone": "+82 10-5837-9451",
+      "status": "Live",
+      "details": {
+        "profile_attributes_summary": {
+          "market": "South Korea",
+          "language": "Korean",
+          "email_opt_in": "Yes",
+          "sms_opt_in": "No",
+          "last_refreshed": "15 Sep 2026 23:40 UTC"
+        },
+        "profile_activity_log": [
+          {
+            "time": "23:40",
+            "activity": "Product-category update",
+            "detail": "Desk accessories · Drinkware"
+          },
+          {
+            "time": "23:38",
+            "activity": "Campaign eligibility check",
+            "detail": "Autumn offers · Eligible"
+          },
+          {
+            "time": "23:35",
+            "activity": "Profile refresh",
+            "detail": "Live profile fields updated"
+          },
+          {
+            "time": "23:32",
+            "activity": "Audience evaluation",
+            "detail": "Returning customers — East Asia"
+          }
+        ],
+        "audience_membership_details": {
+          "audience": "Returning customers — East Asia",
+          "segments": "Repeat customer · Home & lifestyle · Mobile shopper",
+          "preferred_categories": "Desk accessories · Drinkware",
+          "last_campaign": "Autumn offers",
+          "open_rate": "32.4%",
+          "click_rate": "6.8%"
+        },
+        "recent_activity_timeline": [
+          {
+            "event": "Autumn offers",
+            "description": "32.4% open rate"
+          },
+          {
+            "event": "Home & Lifestyle Picks",
+            "description": "28.7% open rate"
+          },
+          {
+            "event": "Profile refreshed from live data",
+            "description": "Recorded"
+          }
+        ],
+        "application_metadata": {
+          "module": "Audience Operations",
+          "breadcrumb": "Northstar Shop / Audience Operations / Audience Operations",
+          "environment": "Production",
+          "user_initials_in_navigation": "AO",
+          "workspace_info": "Audience Operations Production workspace",
+          "build_version": "2026.10.4"
+        }
+      }
+    }
+  ]
+}

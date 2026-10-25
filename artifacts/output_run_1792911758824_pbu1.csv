@@ -1,0 +1,2 @@
+case_id,deletion_status,steps_json
+case_01,INVALID_STATUS_FOO,"not json"

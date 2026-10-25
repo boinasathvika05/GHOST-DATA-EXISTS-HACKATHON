@@ -1,0 +1,6 @@
+{
+  "name": "GhostTrace AI",
+  "description": "Enterprise Data Deletion Intelligence Platform & Evidence-Driven Deletion Assurance",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

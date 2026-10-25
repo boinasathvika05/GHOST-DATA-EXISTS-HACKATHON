@@ -1,0 +1,95 @@
+{
+  "system_id": "Northstar Shop - Pulse Analytics",
+  "records": [
+    {
+      "resource_id": null,
+      "user_id": "user_20, analytics_7438",
+      "email": "darwish.omar@icloud.com",
+      "name": "Omar Darwish",
+      "phone": null,
+      "status": null,
+      "details": {
+        "timeframe_selected": "Last 90 days",
+        "summary_metrics": {
+          "sessions": "12",
+          "products_viewed": "19",
+          "completed_orders": "2",
+          "revenue": "USD 167.42",
+          "mobile_desktop_split": "67% / 33%",
+          "acquisition_channel": "Organic search"
+        },
+        "profile_attributes": {
+          "market": "AE",
+          "audience": "Returning shopper",
+          "interest": "Coffee & dining",
+          "last_activity": "13 Jul 2026 14:22 UTC",
+          "first_seen": "21 Apr 2026 09:14 UTC"
+        },
+        "event_timeline": [
+          {
+            "sequence": "1",
+            "time": "14:22",
+            "event": "Order completed",
+            "product_detail": "Ceramic coffee set",
+            "value": "USD 84.21",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "2",
+            "time": "14:20",
+            "event": "Checkout started",
+            "product_detail": "2 items",
+            "value": "USD 84.21",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "3",
+            "time": "14:17",
+            "event": "Product viewed",
+            "product_detail": "Ceramic coffee set",
+            "value": "—",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "4",
+            "time": "14:16",
+            "event": "Added to cart",
+            "product_detail": "Ceramic coffee set",
+            "value": "USD 42.00",
+            "device": "Mobile"
+          },
+          {
+            "sequence": "5",
+            "time": "14:12",
+            "event": "Product viewed",
+            "product_detail": "Stoneware mug",
+            "value": "USD 18.00",
+            "device": "Desktop"
+          }
+        ],
+        "activity_log": [
+          {
+            "date": "13 Jul",
+            "description": "6 events in active session"
+          },
+          {
+            "date": "08 Jul",
+            "description": "Order completed - USD 83.21"
+          },
+          {
+            "date": "30 Jun",
+            "description": "Product search - coffee set"
+          },
+          {
+            "date": "22 Jun",
+            "description": "Campaign opened"
+          }
+        ],
+        "system_information": {
+          "workspace": "Production workspace",
+          "build": "2026.10.4"
+        }
+      }
+    }
+  ]
+}

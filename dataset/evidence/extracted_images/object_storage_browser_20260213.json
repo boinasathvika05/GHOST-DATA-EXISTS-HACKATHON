@@ -1,0 +1,171 @@
+{
+  "system_id": "Nimbus Object Storage",
+  "captured_at": "13 Feb 2026 08:00 UTC",
+  "records": [
+    {
+      "resource_id": "delivery_confirmation_19.pdf",
+      "user_id": "support-service",
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "684 KB",
+        "modified_utc": "12 Feb 18:42",
+        "storage_class": "Standard",
+        "version": "v3",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02",
+        "content_type": "application/pdf",
+        "encryption": "AES-256",
+        "checksum": "e71b6d...",
+        "modified_full_timestamp": "12 Feb 2026 18:42 UTC",
+        "activity": [
+          {
+            "version": "v3",
+            "timestamp": "12 Feb 18:42",
+            "event": "metadata update"
+          },
+          {
+            "version": "v2",
+            "timestamp": "12 Feb 18:39",
+            "event": "upload complete"
+          },
+          {
+            "version": "v1",
+            "timestamp": "12 Feb 18:38",
+            "event": "object created"
+          }
+        ]
+      }
+    },
+    {
+      "resource_id": "delivery_confirmation_20.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "712 KB",
+        "modified_utc": "11 Feb 14:17",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "return_label_4821.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "203 KB",
+        "modified_utc": "10 Feb 09:33",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "return_label_4876.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "198 KB",
+        "modified_utc": "11 Feb 16:05",
+        "storage_class": "Standard",
+        "version": "v2",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "invoice_NS-10493.pdf",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "318 KB",
+        "modified_utc": "10 Feb 11:21",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "parcel_damage_7713.jpg",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "2.4 MB",
+        "modified_utc": "12 Feb 10:08",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "customer_export_2026-02-10.zip",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "128 MB",
+        "modified_utc": "10 Feb 23:14",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    },
+    {
+      "resource_id": "customer_export_2026-02-12.zip",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "size": "131 MB",
+        "modified_utc": "12 Feb 21:56",
+        "storage_class": "Standard",
+        "version": "v1",
+        "bucket_name": "northstar-customer-data",
+        "account": "Northstar Production",
+        "region": "eu-west-1",
+        "context_path": "eu-west-1 / support-attachments / 2026 / 02"
+      }
+    }
+  ]
+}

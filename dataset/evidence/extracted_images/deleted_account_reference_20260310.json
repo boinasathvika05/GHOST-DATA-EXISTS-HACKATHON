@@ -1,0 +1,155 @@
+{
+  "system_id": "Northstar Shop Customer Reference Registry",
+  "captured_at": "10 Mar 2026 07:18 UTC",
+  "records": [
+    {
+      "resource_id": "user_17",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Customer key",
+      "phone": null,
+      "status": "Retained reference",
+      "details": {
+        "context": "Customer Reference Details",
+        "type": "Customer key",
+        "created_at": "11 Jan 2024 08:42 UTC",
+        "most_recent_update": "10 Mar 2026 07:18 UTC",
+        "owner_team": "Account Platform",
+        "location": "eu-west",
+        "environment": "Production",
+        "build": "2026.10.4",
+        "header_path": "Northstar Shop / Customer Reference Registry / Customer references"
+      }
+    },
+    {
+      "resource_id": "ORD-20263245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Orders Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Orders",
+        "relationship": "Linked to customer",
+        "created_at": "11 Jan 2024 08:45"
+      }
+    },
+    {
+      "resource_id": "CS-3245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Support",
+        "relationship": "Linked to customer",
+        "created_at": "14 Feb 2024 12:16"
+      }
+    },
+    {
+      "resource_id": "CS-3378",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Support",
+        "relationship": "Linked to customer",
+        "created_at": "03 Jun 2024 09:27"
+      }
+    },
+    {
+      "resource_id": "FIN-7742",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Finance Record",
+      "phone": null,
+      "status": "Active",
+      "details": {
+        "system": "Finance",
+        "relationship": "Linked to customer",
+        "created_at": "22 Aug 2024 15:03"
+      }
+    },
+    {
+      "resource_id": "user_17",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Reference created event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Reference created",
+        "timestamp": "11 Jan 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "ORD-20263245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Order link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Order link added",
+        "timestamp": "11 Jan 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "CS-3245",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Support link added",
+        "timestamp": "14 Feb 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "CS-3378",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Support link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Support link added",
+        "timestamp": "03 Jun 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "FIN-7742",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Finance link added event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Finance link added",
+        "timestamp": "22 Aug 2024",
+        "source_section": "History & Activity"
+      }
+    },
+    {
+      "resource_id": "user_17",
+      "user_id": "user_17",
+      "email": null,
+      "name": "Metadata reviewed event",
+      "phone": null,
+      "status": null,
+      "details": {
+        "event": "Metadata reviewed",
+        "timestamp": "10 Mar 2026",
+        "source_section": "History & Activity"
+      }
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "system_id": "Helpline Console",
+  "captured_at": null,
+  "records": [
+    {
+      "resource_id": "CS-5034",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": "Normal priority",
+      "details": {
+        "type": "Support Ticket",
+        "ticket_code": "support_1034",
+        "title": "Where is my delivery?",
+        "sla_remaining": "01:42",
+        "assigned_agent_name": "Maya Chen",
+        "tags": "Delivery · Tracking · Order update"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": "In transit",
+      "details": {
+        "type": "Order",
+        "product": "Running shoes",
+        "carrier": "SwiftShip",
+        "tracking_number": "SWF-884103",
+        "expected_delivery_date": "26 May 2026",
+        "assigned_agent_name": "Maya Chen"
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_1",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:12",
+        "sender": "Kofi Agyeman",
+        "message": "Could you let me know where my order is and when it is expected to arrive?"
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_2",
+      "user_id": null,
+      "email": null,
+      "name": "Northstar Bot",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:13",
+        "sender": "Northstar Bot",
+        "message": "We received your message and are checking the order details."
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_3",
+      "user_id": null,
+      "email": null,
+      "name": "Maya Chen",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:28",
+        "sender": "Maya Chen",
+        "message": "The parcel reached the regional hub and is on track for delivery on 26 May."
+      }
+    },
+    {
+      "resource_id": "CS-5034_conversation_message_4",
+      "user_id": null,
+      "email": "kagyeman8947@fastmail.com",
+      "name": "Kofi Agyeman",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "Conversation Message",
+        "ticket_id": "CS-5034",
+        "timestamp": "09:35",
+        "sender": "Kofi Agyeman",
+        "message": "Thanks for the update."
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_1",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Order confirmed",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "22 May"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_2",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Dispatched",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "23 May"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_3",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Reached regional hub",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "24 May 07:46"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_4",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "In transit",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "24 May 08:15"
+      }
+    },
+    {
+      "resource_id": "ORD-20265034_activity_5",
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Delivery expected",
+      "details": {
+        "type": "Order Activity",
+        "order_id": "ORD-20265034",
+        "timestamp": "26 May"
+      }
+    }
+  ]
+}

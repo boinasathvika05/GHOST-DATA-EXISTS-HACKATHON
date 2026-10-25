@@ -1,0 +1,108 @@
+{
+  "system_id": "Northstar Shop - Sentinel",
+  "captured_at": "2026-08-26T12:00:00Z",
+  "records": [
+    {
+      "resource_id": "audit_record_003",
+      "user_id": "user_03",
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "25 Aug 04:03",
+        "event_name": "Account closure recorded",
+        "category": "Account lifecycle",
+        "actor": "Automated workflow",
+        "integrity_status": "Valid",
+        "partition": "2026-Q3",
+        "event_type": "account_closure_recorded",
+        "recorded_at": "2026-08-25T04:03:00Z",
+        "fingerprint": "8f0c...31ad",
+        "signature": "Valid",
+        "journal": "2026-Q3",
+        "activity_log": [
+          "25 Aug: Account closure recorded",
+          "25 Aug: Session revoked",
+          "24 Aug: Recovery challenge completed",
+          "22 Aug: Email change confirmed"
+        ]
+      }
+    },
+    {
+      "resource_id": "audit_record_002",
+      "user_id": "user_03",
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "25 Aug 03:21",
+        "event_name": "Session revoked",
+        "category": "Session management",
+        "actor": "Security system",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_001",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "24 Aug 16:14",
+        "event_name": "Recovery challenge completed",
+        "category": "Authentication",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_006",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "22 Aug 11:27",
+        "event_name": "Email change confirmed",
+        "category": "Profile update",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_005",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "20 Aug 09:42",
+        "event_name": "Login from new device",
+        "category": "Authentication",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    },
+    {
+      "resource_id": "audit_record_004",
+      "user_id": "user_03",
+      "email": null,
+      "name": "user_03",
+      "phone": null,
+      "status": "Valid",
+      "details": {
+        "event_time_utc": "18 Aug 14:05",
+        "event_name": "Password changed",
+        "category": "Authentication",
+        "actor": "User (self)",
+        "integrity_status": "Valid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "system_id": "Northstar Shop Vault Recovery Manager",
+  "captured_at": "2026-04-26T02:00:00Z",
+  "records": [
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": "Healthy",
+      "details": "Service health for Customer-platform archives. Northstar Production - weekly snapshots."
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Storage growth: +12.4%"
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Restore success: 99.6%"
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Stored: 1.35 PB"
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": "Archives table metadata: Updated moments ago - 4 records"
+    },
+    {
+      "resource_id": "backup_9291",
+      "user_id": null,
+      "email": "bluepeakco@outlook.com",
+      "name": null,
+      "phone": null,
+      "status": "Archive",
+      "details": "Account: bluepeakco@outlook.com, Region: ap-southeast-1, Created: 26 Apr 02:00, Size: 102.3 GB, Encryption: AES-256, Tier: Archive"
+    },
+    {
+      "resource_id": "backup_9288",
+      "user_id": null,
+      "email": "miller.logistics@company.com",
+      "name": null,
+      "phone": null,
+      "status": "Archive",
+      "details": "Account: miller.logistics@company.com, Region: us-west-2, Created: 26 Apr 02:00, Size: 67.1 GB, Encryption: AES-256, Tier: Archive"
+    },
+    {
+      "resource_id": "backup_9287",
+      "user_id": null,
+      "email": "areed1433@gmail.com",
+      "name": null,
+      "phone": null,
+      "status": "Verified",
+      "details": "Account: areed1433@gmail.com, Path: s3://northstar-backups/customer-platform/weekly/segment-42-20260426.tar.zst, Region: eu-west-1, Created: 26 Apr 2026 02:00 UTC, Size: 84.7 GB (from table), Encryption: AES-256, Tier: Archive (from table), Checksum: Verified, Last drill: 29 Mar 2026, Retention end: 26 Jul 2026. Activity: 25 Apr: backup_9286 restored - Completed; 24 Apr: backup_9281 restored - Completed; 22 Apr: checksum verification - Completed."
+    },
+    {
+      "resource_id": "backup_9286",
+      "user_id": null,
+      "email": "summit-retail@company.com",
+      "name": null,
+      "phone": null,
+      "status": "Archive",
+      "details": "Account: summit-retail@company.com, Region: us-east-1, Created: 26 Apr 02:00, Size: 91.4 GB, Encryption: AES-256, Tier: Archive"
+    }
+  ]
+}

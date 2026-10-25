@@ -1,0 +1,128 @@
+{
+  "system_id": "Northstar Shop - Customer Operations (Production workspace, build 2026.10.4)",
+  "captured_at": "24 Sep 2026 09:14 JST",
+  "records": [
+    {
+      "resource_id": "account_5762",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": "+81 90 7610 2507",
+      "status": "Silver",
+      "details": {
+        "type": "customer_profile",
+        "loyalty_tier": "Silver",
+        "member_since": "12 Jan 2024",
+        "signup_channel": "mobile_app",
+        "market": "JP",
+        "preferred_language": "Japanese",
+        "last_contact": "24 Sep 2026 09:14 JST",
+        "default_address": "2-18-4 Kichijoji, Musashino, Tokyo 180-0004",
+        "associated_support_ticket_id": "CS-8538",
+        "associated_support_record_id": "support_9538"
+      }
+    },
+    {
+      "resource_id": "ORD-20265762",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": "+81 90 7610 2507",
+      "status": "Delivered",
+      "details": {
+        "type": "order",
+        "order_date": "12 Sep 2026",
+        "item": "Ceramic coffee set",
+        "quantity": 1,
+        "total": "JPY 8,900",
+        "delivery_date": "18 Sep 2026"
+      }
+    },
+    {
+      "resource_id": "ORD-20265518",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": "+81 90 7610 2507",
+      "status": "Returned",
+      "details": {
+        "type": "order",
+        "order_date": "28 Aug 2026",
+        "item": "Travel backpack",
+        "quantity": 1,
+        "total": "JPY 12,400",
+        "return_date": "03 Sep 2026"
+      }
+    },
+    {
+      "resource_id": "CS-8538",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "activity",
+        "timestamp": "24 Sep 2026",
+        "description": "Customer replied to CS-8538",
+        "activity_source": "customer"
+      }
+    },
+    {
+      "resource_id": null,
+      "user_id": null,
+      "email": null,
+      "name": null,
+      "phone": null,
+      "status": null,
+      "details": {
+        "type": "activity",
+        "timestamp": "22 Sep 2026",
+        "description": "Support agent responded",
+        "activity_source": "support_agent"
+      }
+    },
+    {
+      "resource_id": "ORD-20265762",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": "delivered",
+      "details": {
+        "type": "activity",
+        "timestamp": "18 Sep 2026",
+        "description": "Order ORD-20265762 delivered",
+        "activity_type": "delivery_status_update"
+      }
+    },
+    {
+      "resource_id": "ORD-20265518",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": "returned",
+      "details": {
+        "type": "activity",
+        "timestamp": "03 Sep 2026",
+        "description": "Order ORD-20265518 returned",
+        "activity_type": "return_status_update"
+      }
+    },
+    {
+      "resource_id": "support_9538",
+      "user_id": "user_11",
+      "email": "haruka.s1838@zoho.com",
+      "name": "Haruka Sato",
+      "phone": null,
+      "status": "created",
+      "details": {
+        "type": "activity",
+        "timestamp": "28 Aug 2026",
+        "description": "support_9538 created",
+        "activity_type": "support_record_creation"
+      }
+    }
+  ]
+}
