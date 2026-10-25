@@ -564,7 +564,16 @@ app.get(['/api/download/code-zip', '/api/download/code.zip'], async (req: Reques
       if (!fs.existsSync(dirPath)) return;
       const items = fs.readdirSync(dirPath);
       for (const item of items) {
-        if (item === 'node_modules' || item === 'dist' || item === '.git' || item.endsWith('.DS_Store')) {
+        if (
+          item === 'node_modules' ||
+          item === 'dist' ||
+          item === '.git' ||
+          item === '__pycache__' ||
+          item === '.venv' ||
+          item.endsWith('.pyc') ||
+          item.endsWith('.DS_Store') ||
+          item.endsWith('.zip')
+        ) {
           continue;
         }
         const full = path.join(dirPath, item);
@@ -581,10 +590,11 @@ app.get(['/api/download/code-zip', '/api/download/code.zip'], async (req: Reques
     addDirToZip(path.join(repoRoot, 'code'), zip.folder('code')!);
     addDirToZip(path.join(repoRoot, 'src'), zip.folder('src')!);
     addDirToZip(path.join(repoRoot, 'evaluation'), zip.folder('evaluation')!);
+    addDirToZip(path.join(repoRoot, 'prompts'), zip.folder('prompts')!);
     addDirToZip(path.join(repoRoot, 'scripts'), zip.folder('scripts')!);
     addDirToZip(path.join(repoRoot, 'tests'), zip.folder('tests')!);
 
-    const rootFiles = ['output.csv', 'package.json', 'tsconfig.json', 'vite.config.ts', 'index.html', 'README.md', 'metadata.json', 'server.ts'];
+    const rootFiles = ['package.json', 'tsconfig.json', 'vite.config.ts', 'index.html', 'README.md', 'metadata.json', 'server.ts'];
     for (const rf of rootFiles) {
       const p = path.join(repoRoot, rf);
       if (fs.existsSync(p)) {
@@ -593,6 +603,7 @@ app.get(['/api/download/code-zip', '/api/download/code.zip'], async (req: Reques
     }
 
     const zipBuffer = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
+    fs.writeFileSync(path.join(repoRoot, 'code.zip'), zipBuffer);
     res.setHeader('Content-Disposition', 'attachment; filename="code.zip"');
     res.setHeader('Content-Type', 'application/zip');
     res.send(zipBuffer);
@@ -628,7 +639,5 @@ async function startServer() {
   });
 }
 
-// Start server if executed directly
-if (process.argv[1]?.includes('server') || process.env.RUN_STANDALONE === 'true') {
-  startServer().catch(console.error);
-}
+startServer().catch(console.error);
+

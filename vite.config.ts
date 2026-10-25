@@ -5,23 +5,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    plugins: [
-      react(),
-      tailwindcss(),
-      {
-        name: 'ghosttrace-api-plugin',
-        async configureServer(server) {
-          const { app } = await import('./server.ts');
-          server.middlewares.use((req, res, next) => {
-            // Forward /api requests to Express app
-            if (req.url?.startsWith('/api')) {
-              return app(req as any, res as any, next);
-            }
-            next();
-          });
-        },
-      },
-    ],
+    plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
